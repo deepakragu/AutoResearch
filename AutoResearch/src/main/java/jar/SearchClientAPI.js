@@ -1,26 +1,31 @@
+// SearchClientAPI.js
+// See appendix section of Design Document for purpose and usage
+// Code sourced from https://www.scraping-bot.io/how-to-build-a-web-crawler/
+
+
 const request = require("request");
 const util = require("util");
-const rp = util.promisify(request);
-const sleep = util.promisify(setTimeout);
+const utilreq = util.promisify(request);
+const timeout = util.promisify(setTimeout);
 const cheerio = require('cheerio');
 const { URL } = require('url');
 
 let seenLinks = {};
 
-let rootNode = {};
-let currentNode = {};
+let rootLink = {};
+let currentLink = {};
 
 let linksQueue = [];
 let printList = [];
 
-let previousDepth = 0;
+let prevDepth = 0;
 let maxCrawlingDepth = 5;
 
 let options = null;
 let mainDomain = null;
 let mainParsedUrl = null;
 
-class CreateLink {
+class LinkURLObject {
   constructor(linkURL, depth, parent) {
     this.url = linkURL;
     this.depth = depth;
@@ -29,8 +34,8 @@ class CreateLink {
   }
 }
 //your scraping bot credentials
-let username = "yourUsername",
-    apiKey = "yourApiKey",
+let username = "dragu",
+    apiKey = "rbAxm19j9QPy9KxKkrwWGUtg2",
     apiEndPoint = "http://api.scraping-bot.io/scrape/raw-html",
     auth = "Basic " + Buffer.from(username + ":" + apiKey).toString("base64");
 
@@ -68,10 +73,10 @@ async function crawlBFS(startURL, maxDepth = 5) {
   mainDomain = mainParsedUrl.hostname;
 
   maxCrawlingDepth = maxDepth;
-  startLinkObj = new CreateLink(startURL, 0, null);
-  rootNode = currentNode = startLinkObj;
-  addToLinkQueue(currentNode);
-  await findLinks(currentNode);
+  startLinkObj = new LinkURLObject(startURL, 0, null);
+  rootLink = currentLink = startLinkObj;
+  addToLinkQueue(currentLink);
+  await findLinks(currentLink);
 }
 
 //
@@ -88,7 +93,7 @@ async function findLinks(linkObj) {
   console.log("Scraping URL : " + linkObj.url);
   let response
   try {
-    response = await rp(requestOptions);
+    response = await utilreq(requestOptions);
     if (response.statusCode !== 200) {
       if (response.statusCode === 401 || response.statusCode === 405) {
         console.log("autentication failed check your credentials");
@@ -98,18 +103,18 @@ async function findLinks(linkObj) {
       return 
     }
     //response.body is the whole content of the page if you want to store some kind of data from the web page you should do it here
-    let $ = cheerio.load(response.body);
-    let links = $('body').find('a').filter(function (i, el) {
-      return $(this).attr('href') != null;
+    let data = cheerio.load(response.body);
+    let links = data('body').find('a').filter(function (i, el) {
+      return data(this).attr('href') != null;
     }).map(function (i, x) {
-      return $(this).attr('href');
+      return data(this).attr('href');
     });
     if (links.length > 0) {
       links.map(function (i, x) {
         let reqLink = checkDomain(x);
         if (reqLink) {
           if (reqLink != linkObj.url) {
-            newLinkObj = new CreateLink(reqLink, linkObj.depth + 1, linkObj);
+            newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
             addToLinkQueue(newLinkObj);
           }
         }
@@ -127,11 +132,11 @@ async function findLinks(linkObj) {
       let maximumWaitTime = 5000 //max five seconds
       let waitTime = Math.round(minimumWaitTime + (Math.random() * (maximumWaitTime-minimumWaitTime)));
       console.log("wait for " + waitTime + " milliseconds");
-      await sleep(waitTime);
+      await timeout(waitTime);
       //next url scraping
       await crawl(nextLinkObj);
     } else {
-      setRootNode();
+      setRootLink();
       printTree();
     }
   } catch (err) {
@@ -139,16 +144,16 @@ async function findLinks(linkObj) {
   }
 }
 
-//Go all the way up and set RootNode to the parent node
-function setRootNode() {
-  while (currentNode.parent != null) {
-    currentNode = currentNode.parent;
+//Go all the way up and set RootLink to the parent node
+function setRootLink() {
+  while (currentLink.parent != null) {
+    currentLink = currentLink.parent;
   }
-  rootNode = currentNode;
+  rootLink = currentLink;
 }
 
 function printTree() {
-  addToPrintDFS(rootNode);
+  addToPrintDFS(rootLink);
   console.log(printList.join("\n|"));
 }
 
@@ -182,7 +187,7 @@ function checkDomain(linkURL) {
       return
     } else {
       //relative url
-      let path = currentNode.url.match('.*\/')[0]
+      let path = currentLink.url.match('.*\/')[0]
       return path + linkURL;
     }
   }
@@ -210,9 +215,9 @@ function addToLinkQueue(linkobj) {
 
 function getNextInQueue() {
   let nextLink = linksQueue.shift();
-  if (nextLink && nextLink.depth > previousDepth) {
-    previousDepth = nextLink.depth;
-    console.log(`------- CRAWLING ON DEPTH LEVEL ${previousDepth} --------`);
+  if (nextLink && nextLink.depth > prevDepth) {
+    prevDepth = nextLink.depth;
+    console.log(`------- CRAWLING ON DEPTH LEVEL ${prevDepth} --------`);
   }
   return nextLink;
 }
