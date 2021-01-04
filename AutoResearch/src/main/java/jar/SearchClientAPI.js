@@ -1,12 +1,14 @@
 /**
  * TODO List (In order of highest to lowest priority)
- * Google JSON API
- *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Refactor code
  *    Change code so that google images not checked (look @ checkDomain method)
  *    Create Queue w/ capacities
+ * Google JSON API
+ *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Scraping URLs
  *    Make sure URLs are better matches (i.e. no ads)
+ *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
+ *    Figure out how  to filter out URLs for images and videos
  * Clean Up Code + Delete TODO List
  */
 
@@ -49,12 +51,75 @@ class LinkURLObject {
   }
 }
 
-let query = "lectures"
+let query = "climate+change";
+let googleApiKey = "AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM";
+let googlecx = "a1c32e1f1fd1e7fbf";
+let googlecseURL = "https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf";
+let googleCustomSearchDiscoveryDoc = "http://www.googleapis.com/discovery/v1/apis/customsearch/v1/rest";
+let googleNormalSearch = "https://www.google.com/search?q="+query+"&aqs=chrome.0.69i59j0i433j0i395i433j0i395l2j0i395i433j69i60l2.1824j1j7&sourceid=chrome&ie=UTF-8";
+let googleCSESearch = googlecseURL+"&key="+googleApiKey+"&q="+query;
+
+
+
 //Start Application put here the adress where you want to start your crawling with
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels
-crawlBFS("https://www.google.com/search?q="+query+"&aqs=chrome.0.69i59j0i433j0i395i433j0i395l2j0i395i433j69i60l2.1824j1j7&sourceid=chrome&ie=UTF-8", 1);
+
+crawlBFS(googleNormalSearch, 1);
+//httpGetAsync("https://customsearch.googleapis.com/customsearch/v1?key="+googleApiKey+"&cx="+googlecx+"&q="+query, 1);
+//fetchAsync(googlecseURL+"&key="+googleApiKey+"&q="+query, 1);
+
+// Loads the JavaScript client library and invokes `start` afterwards.
+// gapi.load('client', start);
+
+
+async function fetchAsync(url, i = 1) {
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
+}
+
+function httpGetAsync(theUrl, callback=1)
+{
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+          console.log("error here");
+            //callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+    console.log("got here");
+    console.log(xmlHttp);
+}
+
+
+
+
+// Attempting to use Google API Discovery
+function start() {
+  // Initializes the client with the API key and the Translate API.
+  gapi.client.init({
+    'apiKey': googleApiKey,
+    'discoveryDocs': [googleCustomSearchDiscoveryDoc],
+  }).then(function() {
+    // Executes an API request, and returns a Promise.
+    // The method name `language.translations.list` comes from the API discovery.
+    return gapi.client.request({
+      path: googlecseURL+"&key="+googleApiKey+"&q="+query
+    });
+  }).then(function(response) {
+    console.log(response.result.data.translations[0].translatedText);
+  }, function(reason) {
+    console.log('Error: ' + reason.result.error.message);
+  });
+};
+
+
+
+
 
 
 // //Async function to perform HTTP GET Request in Javascript for Google JSON API
@@ -117,9 +182,9 @@ async function crawlBFS(startURL, maxDepth = 5) {
 async function crawl(linkObj) {
   //Add logs here if needed!
   //console.log(`Checking URL: ${options.url}`);
-  if (linkObj.depth > 0 && linkObj.url.match("google")==null) {
-    return;
-  }
+  // if (linkObj.depth > 0 && linkObj.url.match("google")==null) {
+  //   return;
+  // }
   await findLinks(linkObj);
 }
 
@@ -130,7 +195,7 @@ async function findLinks(linkObj) {
   console.log("Scraping URL : " + linkObj.url);
   let response
   try {
-    response = await utilreq(linkObj.url);
+    response = await utilreq(linkObj.url); //TODO: Might need to change this line to get the proper request (i.e. HTTP GET if using Google Custom Search Engine API)
     if (response.statusCode !== 200) {
       if (response.statusCode === 401 || response.statusCode === 405) {
         console.log("autentication failed check your credentials");
@@ -158,6 +223,9 @@ async function findLinks(linkObj) {
       });
     } else {
       console.log("No more links found for " + requestOptions.url);
+      console.log("response:" + response);
+      console.log("data:" + data);
+      console.log("links:" + links);
     }
     let nextLinkObj = getNextInQueue();
     if (nextLinkObj && nextLinkObj.depth <= maxCrawlingDepth) {
@@ -190,7 +258,7 @@ function setRootLink() {
 }
 
 function printTree() {
-  addToPrintDFS(rootLink);
+  addToPrintDFS("");
   console.log(printList.join("\n|"));
 }
 
@@ -230,9 +298,11 @@ function checkDomain(linkURL) {
   }
 
   let mainHostDomain = parsedUrl.hostname;
+  //console.log("checking if " + mainHostDomain.split(".")[1] + " is the same as " + mainDomain.split(".")[1]);
+  
 
-  if (mainDomain == mainHostDomain) {
-    //console.log("returning Full Link: " + linkURL);
+  if (mainDomain.split(".")[1] != mainHostDomain.split(".")[1] && mainHostDomain.split(".")[1] != "youtube" && mainHostDomain.split(".")[1] != "google") {
+    console.log("returning Full Link: " + linkURL);
     parsedUrl.hash = "";
     return parsedUrl.href;
   } else {
