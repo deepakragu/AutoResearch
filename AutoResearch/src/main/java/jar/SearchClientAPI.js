@@ -1,3 +1,18 @@
+/**
+ * TODO List (In order of highest to lowest priority)
+ * Google JSON API
+ *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
+ * Refactor code
+ *    Change code so that google images not checked (look @ checkDomain method)
+ *    Create Queue w/ capacities
+ * Scraping URLs
+ *    Make sure URLs are better matches (i.e. no ads)
+ * Clean Up Code + Delete TODO List
+ */
+
+
+
+
 // SearchClientAPI.js
 // See appendix section of Design Document for purpose and usage
 // Code sourced from https://www.scraping-bot.io/how-to-build-a-web-crawler/
@@ -39,104 +54,21 @@ let query = "lectures"
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels
-crawlBFS("https://www.scraping-bot.io/", 1);
+crawlBFS("https://www.google.com/search?q="+query+"&aqs=chrome.0.69i59j0i433j0i395i433j0i395l2j0i395i433j69i60l2.1824j1j7&sourceid=chrome&ie=UTF-8", 1);
 
 
-//Temporary Crawl Function to test Request + Google JSON API & REST
-async function crawlTemp(startURL, maxDepth = 5) {
-  try {
-    mainParsedUrl = new URL(startURL);
-  } catch (e) {
-    console.log("URL is not valid", e);
-    return;
-  }
-
-  mainDomain = mainParsedUrl.hostname;
-
-  maxCrawlingDepth = maxDepth;
-  startLinkObj = new LinkURLObject(startURL, 0, null);
-  rootLink = currentLink = startLinkObj;
-  addToLinkQueue(currentLink);
-  await fetchAsync(currentLink);
-  //console.log(data);
-}
-
-//like the findLinks method below, but doesn't use scraperbot credentials and just uses utilreq
-async function fetchAsync(linkObj) {
-  let response = await utilreq(linkObj.url);
-  //let data = await response.json();
-  //let data = response.body;
-  console.log("Scraping URL : " + linkObj.url);
-  let data = cheerio.load(response.body);
-  let links = data('body').find('a').filter(function (i, el) {
-    return data(this).attr('href') != null;
-  }).map(function (i, x) {
-    return data(this).attr('href');
-  });
-  if (links.length > 0) {
-    links.map(function (i, x) {
-      let reqLink = checkDomain(x);
-      if (reqLink) {
-        if (reqLink != linkObj.url) {
-          newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
-          addToLinkQueue(newLinkObj);
-        }
-      }
-    });
-  } else {
-    console.log("No more links found for " + requestOptions.url);
-  }
-  let nextLinkObj = getNextInQueue();
-  if (nextLinkObj && nextLinkObj.depth <= maxCrawlingDepth) {
-    //random sleep
-    //It is very important to make this long enough to avoid spamming the website you want to scrape
-    //if you choose a short time you will potentially be blocked or kill the website you want to crawl
-    //time is in milliseconds here
-    let minimumWaitTime = 500; //half a second these values are very low on a real worl example you should use at least 30000 (30 seconds between each call) 
-    let maximumWaitTime = 5000 //max five seconds
-    let waitTime = Math.round(minimumWaitTime + (Math.random() * (maximumWaitTime-minimumWaitTime)));
-    console.log("wait for " + waitTime + " milliseconds");
-    await timeout(waitTime);
-    //next url scraping
-    await crawl(nextLinkObj);
-  } else {
-    setRootLink();
-    printTree();
-  }
-
-
-  //let data = await response.json();
-  return data;
-}
-
-//Async function to perform HTTP GET Request in Javascript for Google JSON API
-async function httpGetAsync(theUrl) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-          console.log("an error occurred check the URL" + theUrl);
-        }
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-    return xmlHttp.responseText;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// //Async function to perform HTTP GET Request in Javascript for Google JSON API
+// async function httpGetAsync(theUrl) {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.onreadystatechange = function() { 
+//         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+//           console.log("an error occurred check the URL" + theUrl);
+//         }
+//     }
+//     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+//     xmlHttp.send(null);
+//     return xmlHttp.responseText;
+// }
 
 
 //your scraping bot credentials
@@ -185,6 +117,9 @@ async function crawlBFS(startURL, maxDepth = 5) {
 async function crawl(linkObj) {
   //Add logs here if needed!
   //console.log(`Checking URL: ${options.url}`);
+  if (linkObj.depth > 0 && linkObj.url.match("google")==null) {
+    return;
+  }
   await findLinks(linkObj);
 }
 
