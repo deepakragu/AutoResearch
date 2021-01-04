@@ -1,14 +1,13 @@
 /**
  * TODO List (In order of highest to lowest priority)
  * Refactor code
- *    Change code so that google images not checked (look @ checkDomain method)
  *    Create Queue w/ capacities
- * Google JSON API
- *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Scraping URLs
  *    Make sure URLs are better matches (i.e. no ads)
  *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
  *    Figure out how  to filter out URLs for images and videos
+ * Google JSON API
+ *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Clean Up Code + Delete TODO List
  */
 
@@ -147,7 +146,7 @@ let requestOptions = {
   url: apiEndPoint,
   json: {
     url: "this will be replaced in the findLinks function",
-    //scraing-bot options
+    //scraping-bot options
       options: {
           useChrome:false, //if you want to use headless chrome WARNING two api calls wiil be consumed for this option
           premiumProxy:false, //if you want to use premium proxies Unblock Amazon,linkedIn (consuming 10 calls)
@@ -258,7 +257,7 @@ function setRootLink() {
 }
 
 function printTree() {
-  addToPrintDFS("");
+  addToPrintDFS(rootLink);//TODO: Probably change this to empty 
   console.log(printList.join("\n|"));
 }
 
@@ -311,9 +310,9 @@ function checkDomain(linkURL) {
 }
 
 function addToLinkQueue(linkobj) {
-  if (!linkInSeenListExists(linkobj)) {
-    if (linkobj.parent != null) {
-      linkobj.parent.children.push(linkobj);
+  if (!linkInSeenListExists(linkobj)) {//Add check to ensure domain of link has not yet been seen either to ensure domain variety 
+    if (linkobj.parent != null) { //Could add a parameter to linkobj w/ # of children that have been added to queue for capacity purposes
+      linkobj.parent.children.push(linkobj); //Update linkobj parameter to show that child has been pushed
     }
     linksQueue.push(linkobj);
     addToSeen(linkobj);
