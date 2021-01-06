@@ -1,7 +1,5 @@
 /**
  * TODO List (In order of highest to lowest priority)
- * Refactor code
- *    Create Queue w/ capacities
  * Scraping URLs
  *    Make sure URLs are better matches (i.e. no ads)
  *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
@@ -9,6 +7,7 @@
  * Google JSON API
  *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Clean Up Code + Delete TODO List
+ * Refactor code
  */
 
 
@@ -18,13 +17,13 @@
 // See appendix section of Design Document for purpose and usage
 // Code sourced from https://www.scraping-bot.io/how-to-build-a-web-crawler/
 
-
 const request = require("request");
 const util = require("util");
 const utilreq = util.promisify(request);
 const timeout = util.promisify(setTimeout);
 const cheerio = require('cheerio');
 const { URL } = require('url');
+const fetch = require('node-fetch').default;
 
 let seenLinks = {};
 
@@ -66,33 +65,64 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels
-
-crawlBFS(scrapingBotURL, 1);
-
-
+//crawlBFS(googleCSESearch + "&callback=googleCustomHandler", 1);
+//crawlBFS("https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change" , 1);
 
 
 
-//fetchAsync(googlecseURL+"&key="+googleApiKey+"&q="+query, 1);
+
+
+fetchAsync("https://customsearch.googleapis.com/customsearch/v1?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change", 1);
+// Async Function for fetch to potentially use to create GET Request to CSE
 async function fetchAsync(url, i = 1) {
-  let response = await fetch(url);
-  let data = await response.json();
-  return data;
+  fetch(url)
+  .then(safeParseJSON);
+  // .then(response => response.json())
+  // .then(data => console.log(data));
+  // let response = await fetch(url);
+  // let data = await response.json();
+  // return data;
 }
 
-//httpGetAsync("https://customsearch.googleapis.com/customsearch/v1?key="+googleApiKey+"&cx="+googlecx+"&q="+query, 1);
+async function safeParseJSON(response) {
+  const body = await response.text();
+  try {
+      console.log(JSON.parse(body));
+      return JSON.parse(body);
+  } catch (err) {
+      console.error("Error:", err);
+      console.error("Response body:", body);
+      // throw err;
+      return ReE(response, err.message, 500)
+  }
+}
+
+
+//httpGetAsync(googleCSESearch, 1);
 function httpGetAsync(theUrl, callback=1)
 {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-          console.log("error here");
-            //callback(xmlHttp.responseText);
-    }
+    xmlHttp.responseType = 'json';
+    xmlHttp.onreadystatechange = () => {
+      if (xmlHttp.readyState === 4) {
+          if (xmlHttp.status === 200) {
+              // check xmlHttp.responseText here;
+              console.log(xmlHttp.response);
+              console.log("error here1");
+          } else {
+              console.log(xmlHttp.response);
+              console.log("error here2");
+          }
+          
+      }
+      //console.log("not error here3");
+    };
+    console.log("got here1");
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    console.log("got here2");
     xmlHttp.send(null);
-    console.log("got here");
+    console.log("got here3");
     console.log(xmlHttp);
 }
 
@@ -123,6 +153,18 @@ function start() {
 
 
 
+//Handler for GET HTTP Call to Google CSE
+async function googleCustomHandler(response) {
+  console.log(response);
+  for (var i = 0; i < response.items.length; i++) {
+    var item = response.items[i];
+    console.log(item);
+    // in production code, item.htmlTitle should have the HTML entities escaped.
+    document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+    console.log(document.getElementById("content").innerHTML);
+  }
+  console.log(document.getElementById("content").innerHTML);
+}
 
 
 // //Async function to perform HTTP GET Request in Javascript for Google JSON API
@@ -137,6 +179,61 @@ function start() {
 //     xmlHttp.send(null);
 //     return xmlHttp.responseText;
 // }
+
+// Online example to use CSE w/ Javascript
+// const fetch = require('node-fetch');
+
+// //const apiKey = process.env.CSE_KEY;
+// //const cx = process.env.CSE_CX;
+
+// exports.handler = async function(event, context) {
+//   let query = event.queryStringParameters.query;
+//   if(!query) {
+//     return {
+//       statusCode: 500,
+//       body:'Must pass query parameter in the query string.'
+//     }
+//   }
+
+//   let start = event.queryStringParameters.start || 1;
+//   if(start <= 0 || start > 91) start = 1;
+
+//   let url = googleCSESearch;
+//   let resp = await fetch(url);
+//   let data = await resp.json();
+//   // reduce the result a bit for simplification
+//   let result = {};
+//   result.info = data.searchInformation;
+//   result.info.totalResults = parseInt(result.info.totalResults, 10);
+//   result.items = data.items.map(d => {
+//     delete d.kind;
+//     if(d.pagemap && d.pagemap.cse_thumbnail) {
+//       d.thumbnail = { 
+//         src: d.pagemap.cse_thumbnail[0].src, 
+//         width: d.pagemap.cse_thumbnail[0].width, 
+//         height: d.pagemap.cse_thumbnail[0].height
+//       } 
+//     }
+//     delete d.pagemap;
+//     delete d.cacheId;
+//     return d
+//   });
+
+//   return {
+//     statusCode: 200,
+//     headers : {
+//       'Content-Type':'application/json'
+//     },
+//     body: JSON.stringify(result)
+//   }
+
+// }
+
+
+
+
+
+
 
 
 
