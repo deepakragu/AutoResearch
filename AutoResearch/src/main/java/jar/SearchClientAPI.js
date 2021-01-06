@@ -36,6 +36,7 @@ let printList = [];
 
 let prevDepth = 0;
 let maxCrawlingDepth = 5;
+let maxLinkQueueSize = 5;
 
 let options = null;
 let mainDomain = null;
@@ -58,6 +59,7 @@ let googleCustomSearchDiscoveryDoc = "http://www.googleapis.com/discovery/v1/api
 let googleNormalSearch = "https://www.google.com/search?q="+query+"&aqs=chrome.0.69i59j0i433j0i395i433j0i395l2j0i395i433j69i60l2.1824j1j7&sourceid=chrome&ie=UTF-8";
 let googleCSESearch = googlecseURL+"&key="+googleApiKey+"&q="+query;
 
+let scrapingBotURL = "http://www.scraping-bot.io"
 
 
 //Start Application put here the adress where you want to start your crawling with
@@ -65,20 +67,20 @@ let googleCSESearch = googlecseURL+"&key="+googleApiKey+"&q="+query;
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels
 
-crawlBFS(googleNormalSearch, 1);
-//httpGetAsync("https://customsearch.googleapis.com/customsearch/v1?key="+googleApiKey+"&cx="+googlecx+"&q="+query, 1);
+crawlBFS(scrapingBotURL, 1);
+
+
+
+
+
 //fetchAsync(googlecseURL+"&key="+googleApiKey+"&q="+query, 1);
-
-// Loads the JavaScript client library and invokes `start` afterwards.
-// gapi.load('client', start);
-
-
 async function fetchAsync(url, i = 1) {
   let response = await fetch(url);
   let data = await response.json();
   return data;
 }
 
+//httpGetAsync("https://customsearch.googleapis.com/customsearch/v1?key="+googleApiKey+"&cx="+googlecx+"&q="+query, 1);
 function httpGetAsync(theUrl, callback=1)
 {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -95,7 +97,8 @@ function httpGetAsync(theUrl, callback=1)
 }
 
 
-
+// Loads the JavaScript client library and invokes `start` afterwards.
+// gapi.load('client', start);
 
 // Attempting to use Google API Discovery
 function start() {
@@ -121,6 +124,7 @@ function start() {
 
 
 
+
 // //Async function to perform HTTP GET Request in Javascript for Google JSON API
 // async function httpGetAsync(theUrl) {
 //     var xmlHttp = new XMLHttpRequest();
@@ -133,6 +137,8 @@ function start() {
 //     xmlHttp.send(null);
 //     return xmlHttp.responseText;
 // }
+
+
 
 
 //your scraping bot credentials
@@ -157,6 +163,10 @@ let requestOptions = {
       Authorization : auth
   }
 }
+
+
+
+
 
 async function crawlBFS(startURL, maxDepth = 5) {
   try {
@@ -216,7 +226,9 @@ async function findLinks(linkObj) {
         if (reqLink) {
           if (reqLink != linkObj.url) {
             newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
-            addToLinkQueue(newLinkObj);
+            if (newLinkObj.parent.children.length < maxLinkQueueSize) { //If statement to limit size of queue
+              addToLinkQueue(newLinkObj);
+            }
           }
         }
       });
@@ -301,7 +313,7 @@ function checkDomain(linkURL) {
   
 
   if (mainDomain.split(".")[1] != mainHostDomain.split(".")[1] && mainHostDomain.split(".")[1] != "youtube" && mainHostDomain.split(".")[1] != "google") {
-    console.log("returning Full Link: " + linkURL);
+    //console.log("returning Full Link: " + linkURL);
     parsedUrl.hash = "";
     return parsedUrl.href;
   } else {
