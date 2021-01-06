@@ -6,6 +6,7 @@
  * Return URLList
  *    Write URL links to scrape to file
  * Scraping URLs
+ *    Look into using "snipped" attribute of returned JSON data (for NLP parser)
  *    Make sure URLs are better matches (i.e. no ads)
  *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
  *    Figure out how  to filter out URLs for images and videos
