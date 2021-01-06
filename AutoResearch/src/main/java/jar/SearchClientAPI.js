@@ -1,11 +1,14 @@
 /**
  * TODO List (In order of highest to lowest priority)
+ * Google JSON API
+ *    Scrape URLS for 2 levels
+ *    Make sure returned URLs are not from same domain as start URL i.e. customsearch.googleapis.com (use string contains method) (also possibly parent URL?) 
+ * Return URLList
+ *    Write URL links to scrape to file
  * Scraping URLs
  *    Make sure URLs are better matches (i.e. no ads)
  *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
  *    Figure out how  to filter out URLs for images and videos
- * Google JSON API
- *    Implement Google JSON API/REST into URL Call (i.e. use our programmable search engine instead of google.com)
  * Clean Up Code + Delete TODO List
  * Refactor code
  */
@@ -54,6 +57,7 @@ let query = "climate+change";
 let googleApiKey = "AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM";
 let googlecx = "a1c32e1f1fd1e7fbf";
 let googlecseURL = "https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf";
+let googleCustomSearchAPIURL = "https://customsearch.googleapis.com/customsearch/v1?";
 let googleCustomSearchDiscoveryDoc = "http://www.googleapis.com/discovery/v1/apis/customsearch/v1/rest";
 let googleNormalSearch = "https://www.google.com/search?q="+query+"&aqs=chrome.0.69i59j0i433j0i395i433j0i395l2j0i395i433j69i60l2.1824j1j7&sourceid=chrome&ie=UTF-8";
 let googleCSESearch = googlecseURL+"&key="+googleApiKey+"&q="+query;
@@ -72,23 +76,30 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 
 
 
-fetchAsync("https://customsearch.googleapis.com/customsearch/v1?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change", 1);
+crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
+// async function someFunc(url, i = 7) {
+//   const urlJSON = await fetchAsync(url, i);
+//   console.log(urlJSON);
+// }
+
 // Async Function for fetch to potentially use to create GET Request to CSE
-async function fetchAsync(url, i = 1) {
-  fetch(url)
-  .then(safeParseJSON);
+async function fetchAsync(url, i = 5) {
+  // fetch(url)
+  // .then(safeParseJSON);
+  // .then(data => console.log(data));
   // .then(response => response.json())
   // .then(data => console.log(data));
-  // let response = await fetch(url);
-  // let data = await response.json();
-  // return data;
+  let response = await fetch(url);
+  let data = await safeParseJSON(response);
+  console.log(data[0].link);
 }
 
 async function safeParseJSON(response) {
   const body = await response.text();
   try {
-      console.log(JSON.parse(body));
-      return JSON.parse(body);
+      //console.log(JSON.parse(body));
+      let data = JSON.parse(body);
+      return data.items;
   } catch (err) {
       console.error("Error:", err);
       console.error("Response body:", body);
@@ -266,6 +277,8 @@ let requestOptions = {
 
 
 async function crawlBFS(startURL, maxDepth = 5) {
+  console.log("\nquery: " + query);
+  console.log("Google Search URL: " + startURL + "\n");
   try {
     mainParsedUrl = new URL(startURL);
   } catch (e) {
@@ -273,12 +286,32 @@ async function crawlBFS(startURL, maxDepth = 5) {
     return;
   }
 
+  
+
   mainDomain = mainParsedUrl.hostname;
 
   maxCrawlingDepth = maxDepth;
-  startLinkObj = new LinkURLObject(startURL, 0, null);
-  rootLink = currentLink = startLinkObj;
-  addToLinkQueue(currentLink);
+  let startLinkObj = new LinkURLObject(startURL, 0, null);
+  rootLink = startLinkObj;
+
+
+  let response = await fetch(startURL);
+  let data = await safeParseJSON(response);
+  var i;
+  for (i = 0; i < maxLinkQueueSize; i++) {
+    let reqLink = checkDomain(data[i].link);
+    if (reqLink) {
+      if (reqLink != startLinkObj.url) {
+        newLinkObj = new LinkURLObject(reqLink, startLinkObj.depth + 1, startLinkObj);
+        if (newLinkObj.parent.children.length < maxLinkQueueSize) {
+          addToLinkQueue(newLinkObj);
+        }
+      }
+    }
+  }
+  
+
+  currentLink = getNextInQueue();
 
   await findLinks(currentLink);
 
@@ -330,7 +363,7 @@ async function findLinks(linkObj) {
         }
       });
     } else {
-      console.log("No more links found for " + requestOptions.url);
+      console.log("No more links found for " + linkObj.url);
       console.log("response:" + response);
       console.log("data:" + data);
       console.log("links:" + links);
