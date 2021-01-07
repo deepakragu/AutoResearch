@@ -355,11 +355,14 @@ async function findLinks(linkObj) {
       links.map(function (i, x) {
         let reqLink = checkDomain(x);
         if (reqLink) {
-          if (reqLink != linkObj.url) {
+          // console.log("reqLink: " + reqLink);
+          // console.log("linkObj.url: " + linkObj.url);
+          // if (reqLink != linkObj.url) { // This if statement checks that the link we're adding isn't the same link/domain as the link passed into the function
             newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
             if (newLinkObj.parent.children.length < maxLinkQueueSize) { //If statement to limit size of queue
+              console.log("Adding link to queue: " + newLinkObj.url);
               addToLinkQueue(newLinkObj);
-            }
+            // }
           }
         }
       });
@@ -426,6 +429,7 @@ function checkDomain(linkURL) {
     fullUrl = false;
   }
   if (fullUrl === false) {
+    console.log("I got here ... thats not good");
     if (linkURL.indexOf("/") === 0) {
       //relative to domain url
       return mainParsedUrl.protocol + "//" + mainParsedUrl.hostname + linkURL.split("#")[0];
@@ -440,11 +444,15 @@ function checkDomain(linkURL) {
   }
 
   let mainHostDomain = parsedUrl.hostname;
-  //console.log("checking if " + mainHostDomain.split(".")[1] + " is the same as " + mainDomain.split(".")[1]);
+  console.log("checking if " + mainHostDomain.split(".")[1] + " includes " + mainDomain.split(".")[1]);
+  console.log(mainHostDomain.includes(mainDomain));
   
 
-  if (mainDomain.split(".")[1] != mainHostDomain.split(".")[1] && mainHostDomain.split(".")[1] != "youtube" && mainHostDomain.split(".")[1] != "google") {
-    //console.log("returning Full Link: " + linkURL);
+  if (mainDomain != mainHostDomain 
+    && mainDomain.split(".")[1] != mainHostDomain.split(".")[1] 
+    && !mainHostDomain.includes("youtube") 
+    && !mainHostDomain.includes("google")) {
+    // console.log("returning Full Link: " + linkURL);
     parsedUrl.hash = "";
     return parsedUrl.href;
   } else {
