@@ -3,6 +3,7 @@
  * Google JSON API
  *    Scrape URLS for 2 levels
  *    Make sure returned URLs are not from same domain as start URL i.e. customsearch.googleapis.com (use string contains method) (also possibly parent URL?) 
+ *      Look @ checkDomain if statements (console.log("I got here ... thats not good"))
  * Return URLList
  *    Write URL links to scrape to file
  * Scraping URLs
