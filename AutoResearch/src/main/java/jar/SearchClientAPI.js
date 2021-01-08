@@ -5,9 +5,9 @@
  * Scraping URLs
  *    Look into using "snipped" attribute of returned JSON data (for NLP parser)
  *    Make sure URLs are better matches (i.e. no ads)
- *    More filtering (i.e. probably filter social media websites, make sure we don't scrape two URLs w/ same domain)
+ *    More filtering (i.e. probably filter links w/ certain keywords (media, news), make sure we don't scrape two URLs w/ same domain)
  *    Figure out how  to filter out URLs for images and videos
- * Clean Up Code + Delete TODO List
+ * Clean Up Code + Delete TODO List + Comment Code
  * Refactor code
  */
 
@@ -16,7 +16,7 @@
 
 // SearchClientAPI.js
 // See appendix section of Design Document for purpose and usage
-// Code sourced from https://www.scraping-bot.io/how-to-build-a-web-crawler/
+// Code inspired/sourced from https://www.scraping-bot.io/how-to-build-a-web-crawler/
 
 const request = require("request");
 const util = require("util");
@@ -27,6 +27,9 @@ const { URL } = require('url');
 const fetch = require('node-fetch').default;
 
 let seenLinks = {};
+// Array of domains to filter out (NOT keywords that can be found in URL)
+let blacklistedDomains = ["google", "youtube", "facebook", "twitter", "instagram", "pintrest", "account", "interactive", "login",
+                          "news", "media"];
 
 let rootLink = {};
 let currentLink = {};
@@ -36,6 +39,7 @@ let printList = [];
 
 let prevDepth = 0;
 let maxCrawlingDepth = 5;
+// Maximum # of links per level, reccomended to keep to five to avoid unrelated websites (i.e. worldbank for climate change)
 let maxLinkQueueSize = 5;
 
 let options = null;
@@ -66,7 +70,8 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 //Start Application put here the adress where you want to start your crawling with
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
-// it is recommanded to limit to 5 levels
+// it is recommanded to limit to 5 levels, advise to keep @ 1 level to avoid unecessary links on sub pages (like mailto links)
+crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
 //crawlBFS(googleCSESearch + "&callback=googleCustomHandler", 1);
 //crawlBFS("https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change" , 1);
 
@@ -74,7 +79,7 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 
 
 
-crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 2);
+
 // async function someFunc(url, i = 7) {
 //   const urlJSON = await fetchAsync(url, i);
 //   console.log(urlJSON);
@@ -357,7 +362,6 @@ async function findLinks(linkObj) {
           // if (reqLink != linkObj.url) { // This if statement checks that the link we're adding isn't the same link/domain as the link passed into the function
             newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
             if (newLinkObj.parent.children.length < maxLinkQueueSize) { //If statement to limit size of queue
-              console.log("Adding link to queue: " + newLinkObj.url);
               addToLinkQueue(newLinkObj);
             // }
           }
@@ -447,9 +451,8 @@ function checkDomain(linkURL) {
   
 
   if (mainDomain != mainHostDomain 
-    && mainDomain.split(".")[1] != mainHostDomain.split(".")[1] 
-    && !mainHostDomain.includes("youtube") 
-    && !mainHostDomain.includes("google")) {
+    && mainDomain.split(".")[1] != mainHostDomain.split(".")[1]
+    && !linkInBlacklistedDomains(mainHostDomain)) {
     // console.log("returning Full Link: " + linkURL);
     parsedUrl.hash = "";
     return parsedUrl.href;
@@ -461,13 +464,14 @@ function checkDomain(linkURL) {
 function addToLinkQueue(linkobj) {
   
   if (!linkInSeenListExists(linkobj)) {//Add check to ensure domain of link has not yet been seen either to ensure domain variety 
-    if (!linkobj.url.includes("http")) {
+    if (!linkobj.url.startsWith("http")) {
       addToSeen(linkobj);
       return;
     }
     if (linkobj.parent != null) { //Could add a parameter to linkobj w/ # of children that have been added to queue for capacity purposes
       linkobj.parent.children.push(linkobj); //Update linkobj parameter to show that child has been pushed
     }
+    console.log("Adding link to queue: " + linkobj.url);
     linksQueue.push(linkobj);
     addToSeen(linkobj);
   }
@@ -494,4 +498,14 @@ function addToSeen(linkObj) {
 //Returns whether the link has been seen.
 function linkInSeenListExists(linkObj) {
   return seenLinks[linkObj.url] == null ? false : true;
+}
+
+//Returns whether the domain of the link is blacklisted.
+function linkInBlacklistedDomains(url) {
+  for (var i = 0; i < blacklistedDomains.length; i++) {
+    if (url.includes(blacklistedDomains[i])) {
+      return true;
+    }
+  }
+  return false;
 }
