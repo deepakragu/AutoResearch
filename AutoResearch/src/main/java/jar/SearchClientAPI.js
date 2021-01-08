@@ -26,6 +26,7 @@ const cheerio = require('cheerio');
 const { URL } = require('url');
 const fetch = require('node-fetch').default;
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const fs = require('fs');
 
 let seenLinks = {};
 // Array of domains to filter out (NOT keywords that can be found in URL)
@@ -37,6 +38,7 @@ let currentLink = {};
 
 let linksQueue = [];
 let printList = [];
+let writeList = [];
 
 let prevDepth = 0;
 let maxCrawlingDepth = 5;
@@ -72,8 +74,14 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels, advise to keep @ 1 level to avoid unecessary links on sub pages (like mailto links)
-setQuery("query.txt");
-crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
+main();
+
+async function main() {
+  setQuery("query.txt");
+  await crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
+  writeURL("urls.txt");
+}
+
 
 //crawlBFS(googleCSESearch + "&callback=googleCustomHandler", 1);
 //crawlBFS("https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change" , 1);
@@ -81,8 +89,9 @@ crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+quer
 
 
 
-
-async function setQuery(file) {
+//Read query.txt (or queryFile) and set query to the query in that file
+//TODO: Streamline method to look more like writeURL
+function setQuery(file) {
   let filename = "file:///" + process.cwd() + "/AutoResearch/src/main/java/jar/" + file;
   var rawFile = new XMLHttpRequest();
   rawFile.open("GET", filename, false);
@@ -104,7 +113,36 @@ async function setQuery(file) {
   // let data = await safeParseJSON(response);
   // console.log(data);
 
+  
+  // // Read data from file. 
+  // let filename = process.cwd() + "/AutoResearch/src/main/java/jar/" + file
+  // fs.readFile(filename, (err, data) => { 
+      
+  //   // In case of a error throw err. 
+  //   if (err) throw err; 
+  //   query = data.toString();
+  //   console.log("query: " + query);
+  // }); 
+
 }
+
+function writeURL(file) {
+
+  writeList.shift();
+  let data = writeList.join("\n");  
+  console.log("data: " + data);
+  // Write data into file. 
+  let filename = process.cwd() + "/AutoResearch/src/main/java/jar/" + file
+  fs.writeFile(filename, data, (err) => { 
+      
+    // In case of a error throw err. 
+    if (err) throw err; 
+  }); 
+
+}
+
+
+
 
 
 
@@ -431,13 +469,14 @@ function setRootLink() {
 }
 
 function printTree() {
-  addToPrintDFS(rootLink);//TODO: Probably change this to empty 
+  addToPrintDFS(rootLink);
   console.log(printList.join("\n|"));
 }
 
 function addToPrintDFS(node) {
   let spaces = Array(node.depth * 3).join("-");
   printList.push(spaces + node.url);
+  writeList.push(node.url);
   if (node.children) {
     node.children.map(function (i, x) {
       {
