@@ -1,9 +1,5 @@
 /**
  * TODO List (In order of highest to lowest priority)
- * Google JSON API
- *    Scrape URLS for 2 levels
- *    Make sure returned URLs are not from same domain as start URL i.e. customsearch.googleapis.com (use string contains method) (also possibly parent URL?) 
- *      Look @ checkDomain if statements (console.log("I got here ... thats not good"))
  * Return URLList
  *    Write URL links to scrape to file
  * Scraping URLs
@@ -78,7 +74,7 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 
 
 
-crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
+crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 2);
 // async function someFunc(url, i = 7) {
 //   const urlJSON = await fetchAsync(url, i);
 //   console.log(urlJSON);
@@ -430,23 +426,24 @@ function checkDomain(linkURL) {
     fullUrl = false;
   }
   if (fullUrl === false) {
-    console.log("I got here ... thats not good");
-    if (linkURL.indexOf("/") === 0) {
-      //relative to domain url
-      return mainParsedUrl.protocol + "//" + mainParsedUrl.hostname + linkURL.split("#")[0];
-    } else if (linkURL.indexOf("#") === 0) {
-      //anchor avoid link
-      return
-    } else {
-      //relative url
-      let path = currentLink.url.match('.*\/')[0]
-      return path + linkURL;
-    }
+    return; // TODO: Understand what the next 10 lines of code do and asses necessity
+    // console.log("I got here ... thats not good");
+    // if (linkURL.indexOf("/") === 0) {
+    //   //relative to domain url
+    //   return mainParsedUrl.protocol + "//" + mainParsedUrl.hostname + linkURL.split("#")[0];
+    // } else if (linkURL.indexOf("#") === 0) {
+    //   //anchor avoid link
+    //   return
+    // } else {
+    //   //relative url
+    //   let path = currentLink.url.match('.*\/')[0]
+    //   return path + linkURL;
+    // }
   }
 
   let mainHostDomain = parsedUrl.hostname;
-  console.log("checking if " + mainHostDomain.split(".")[1] + " includes " + mainDomain.split(".")[1]);
-  console.log(mainHostDomain.includes(mainDomain));
+  // console.log("checking if " + mainHostDomain.split(".")[1] + " includes " + mainDomain.split(".")[1]);
+  // console.log(mainHostDomain.includes(mainDomain));
   
 
   if (mainDomain != mainHostDomain 
@@ -462,7 +459,12 @@ function checkDomain(linkURL) {
 }
 
 function addToLinkQueue(linkobj) {
+  
   if (!linkInSeenListExists(linkobj)) {//Add check to ensure domain of link has not yet been seen either to ensure domain variety 
+    if (!linkobj.url.includes("http")) {
+      addToSeen(linkobj);
+      return;
+    }
     if (linkobj.parent != null) { //Could add a parameter to linkobj w/ # of children that have been added to queue for capacity purposes
       linkobj.parent.children.push(linkobj); //Update linkobj parameter to show that child has been pushed
     }
