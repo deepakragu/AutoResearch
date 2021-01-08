@@ -56,7 +56,7 @@ class LinkURLObject {
   }
 }
 
-let query = "climate+change";
+let query = "";
 let googleApiKey = "AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM";
 let googlecx = "a1c32e1f1fd1e7fbf";
 let googlecseURL = "https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf";
@@ -72,8 +72,8 @@ let scrapingBotURL = "http://www.scraping-bot.io"
 //second parameter is depth with 1 it will scrape all the links found on the first page but not the ones found on other pages
 //if you put 2 it will scrape all links on first page and all links found on second level pages be careful with this on a huge website it will represent tons of pages to scrape
 // it is recommanded to limit to 5 levels, advise to keep @ 1 level to avoid unecessary links on sub pages (like mailto links)
+setQuery("query.txt");
 crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+query, 1);
-// readFileFunc("wug.txt")
 
 //crawlBFS(googleCSESearch + "&callback=googleCustomHandler", 1);
 //crawlBFS("https://cse.google.com/cse?cx=a1c32e1f1fd1e7fbf&key=AIzaSyBivkcA_75yfS4lH5OPz5byhik_ce9p5tM&q=climate+change" , 1);
@@ -81,27 +81,29 @@ crawlBFS(googleCustomSearchAPIURL+"cx="+googlecx+"&key="+googleApiKey+"&q="+quer
 
 
 
-async function readFileFunc(filename) {
-  
+
+async function setQuery(file) {
+  let filename = "file:///" + process.cwd() + "/AutoResearch/src/main/java/jar/" + file;
   var rawFile = new XMLHttpRequest();
   rawFile.open("GET", filename, false);
-  // rawFile.onreadystatechange = function ()
-  // {
-  //     if(rawFile.readyState === 4)
-  //     {
-  //         if(rawFile.status === 200 || rawFile.status == 0)
-  //         {
-  //             var allText = rawFile.responseText;
-  //             console.log("error here: " + allText);
-  //         }
-  //     }
-  // }
+  rawFile.onreadystatechange = function ()
+  {
+      if(rawFile.readyState === 4)
+      {
+          if(rawFile.status === 200 || rawFile.status == 0)
+          {
+              query = rawFile.responseText;
+              
+          }
+      }
+  }
   rawFile.send(null);
-  console.log(rawFile);
+  // console.log(rawFile);
 
   // let response = await fetch(filename);
   // let data = await safeParseJSON(response);
   // console.log(data);
+
 }
 
 

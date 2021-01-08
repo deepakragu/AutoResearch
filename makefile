@@ -10,7 +10,7 @@ default: test
 
 test:
 	#cd $(folderName) && mvn test
-	cd $(path) && javac *.java && java testJava $(args)
+	cd $(path) && javac *.java && java Main $(args)
 
 # Example Usage
 # (base) Ragus-MacBook-Pro:AutoResearch deepakragu$ make test args=wug.txt
