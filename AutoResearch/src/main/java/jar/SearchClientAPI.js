@@ -1,7 +1,5 @@
 /**
  * TODO List (In order of highest to lowest priority)
- * Return URLList
- *    Write URL links to scrape to file
  * Scraping URLs
  *    Look into using "snipped" attribute of returned JSON data (for NLP parser)
  *    Make sure URLs are better matches (i.e. no ads)
@@ -92,7 +90,7 @@ async function main() {
 //Read query.txt (or queryFile) and set query to the query in that file
 //TODO: Streamline method to look more like writeURL
 function setQuery(file) {
-  let filename = "file:///" + process.cwd() + "/AutoResearch/src/main/java/jar/" + file;
+  let filename = "file://" + process.cwd() + "/" + file;
   var rawFile = new XMLHttpRequest();
   rawFile.open("GET", filename, false);
   rawFile.onreadystatechange = function ()
@@ -132,7 +130,7 @@ function writeURL(file) {
   let data = writeList.join("\n");  
   console.log("data: " + data);
   // Write data into file. 
-  let filename = process.cwd() + "/AutoResearch/src/main/java/jar/" + file
+  let filename = process.cwd() + "/" + file;
   fs.writeFile(filename, data, (err) => { 
       
     // In case of a error throw err. 

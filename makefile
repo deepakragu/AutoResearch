@@ -1,7 +1,7 @@
 # Any Variable name can be changed in command line with "variableName=desiredName" additional parameters in command line
 
 folderName = AutoResearch
-path = AutoResearch/src/main/java/jar
+path = src/main/java/jar
 
 args = ""
 testargs = ""
@@ -10,7 +10,9 @@ default: test
 
 test:
 	#cd $(folderName) && mvn test
-	cd $(path) && javac *.java && java Main $(args)
+	cd $(folderName) && cd $(path) && javac Main.java && java Main $(args)
+	cd $(folderName) && cd $(path) && node SearchClientAPI.js
+	cd $(folderName) &&  mvn package && java -jar target/AutoResearch-1.0-SNAPSHOT.jar
 
 # Example Usage
 # (base) Ragus-MacBook-Pro:AutoResearch deepakragu$ make test args=wug.txt

@@ -1,3 +1,6 @@
+//package jar;
+
+
 import java.nio.charset.StandardCharsets;
 import java.io.Serializable;
 import java.nio.file.Files;
