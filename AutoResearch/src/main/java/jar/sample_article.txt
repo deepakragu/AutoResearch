@@ -1,0 +1,683 @@
+<html class="no-flash cookies geolocation svg picture canvas video webgl srcdoc supports hiddenscroll no-touchevents fullscreen flexbox cssanimations flexboxlegacy no-flexboxtweener csstransforms csstransforms3d csstransitions preserve3d" style=""><head>
+<script type="text/javascript" src="https://bam-cell.nr-data.net/1/5e33925808?a=50938797&amp;v=1194.94d5a62&amp;to=JVcPR0MLWApSRU1eAQVVEhxfAUMVaF4WVg4VFxJbXhM%3D&amp;rst=2767&amp;ck=1&amp;ref=https://climate.nasa.gov/news/3061/2020-tied-for-warmest-year-on-record-nasa-analysis-shows/&amp;ap=544&amp;be=758&amp;fe=2605&amp;dc=1000&amp;af=err,xhr,stn,ins&amp;perf=%7B%22timing%22:%7B%22of%22:1610833990861,%22n%22:0,%22u%22:719,%22ue%22:719,%22f%22:4,%22dn%22:4,%22dne%22:4,%22c%22:4,%22ce%22:4,%22rq%22:12,%22rp%22:704,%22rpe%22:712,%22dl%22:724,%22di%22:999,%22ds%22:1000,%22de%22:1103,%22dc%22:2605,%22l%22:2605,%22le%22:2609%7D,%22navigation%22:%7B%7D%7D&amp;fp=990&amp;fcp=990&amp;jsonp=NREUM.setToken"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://js-agent.newrelic.com/nr-1194.min.js"></script><script src="https://script.crazyegg.com/pages/versioned/common-scripts/11.1.203.js" type="text/javascript" async=""></script><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/9f996d3e/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script src="https://www.youtube.com/iframe_api"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NLDQZ25"></script><script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NLDQZ25');
+</script>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"5e33925808","applicationID":"50938797","transactionName":"JVcPR0MLWApSRU1eAQVVEhxfAUMVaF4WVg4VFxJbXhM=","queueTime":0,"applicationTime":544,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcPUlZTDxAFVFhRDwYOUQ==",licenseKey:"5e33925808",applicationID:"50938797"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(23),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1194.min.js"},y=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(24),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+<!-- Responsiveness -->
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1" name="viewport">
+<!-- Favicon -->
+<link href="/favicon.ico" rel="shortcut icon" type="image/ico">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="fPfYorrbNGVpfd3Jj2TKQO/SQwXHtd7CSIv/fxvLJlQ2pt2Oz7g8sMb9UEglnDqUNiJJeWWeie2tll0MlwqfkA==">
+<title>2020 Tied for Warmest Year on Record, NASA Analysis Shows – Climate Change: Vital Signs of the Planet</title>
+<meta content="Climate Change: Vital Signs of the Planet" property="og:site_name">
+<meta content="" name="author">
+<meta content="Climate change, global warming, Earth, JPL, greenhouse gases, National Aeronautics and Space Administration, Jet Propulsion Laboratory, NASA climate change, global climate change" name="keywords">
+<meta content="Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA." name="description">
+<meta content="Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA." property="og:description">
+<meta content="2020 Tied for Warmest Year on Record, NASA Analysis Shows – Climate Change: Vital Signs of the Planet" property="og:title">
+<meta content="https://climate.nasa.gov/news/3061/2020-tied-for-warmest-year-on-record-nasa-analysis-shows" property="og:url">
+<meta content="article" property="og:type">
+<meta content="2021-01-14 13:35:22 -0800" property="og:updated_time">
+<meta content="2020 Tied for Warmest Year on Record, NASA Analysis Shows – Climate Change: Vital Signs of the Planet" name="twitter:title">
+<meta content="Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA." name="twitter:description">
+<meta content="https://climate.nasa.gov/system/news_items/main_images/3061_2020Temp.jpg" property="og:image">
+<meta content="https://climate.nasa.gov/system/news_items/main_images/3061_2020Temp.jpg" name="twitter:image">
+<link href="https://climate.nasa.gov/system/news_items/main_images/3061_2020Temp.jpg" rel="image_src">
+
+<meta content="253148381806292" property="fb:app_id">
+
+<link rel="stylesheet" media="all" href="/assets/public_manifest-8d83b508dfab21a89ac89b807c681f6fb71b9f40b00fb1fc5adf1917147eac32.css">
+<link rel="stylesheet" media="screen" href="/assets/mbcms/vendor/jquery.fancybox3-d5d81bdfc05a59e4ea72bca1d8b7fcc399bd3b61f7c06af95a8a48795df69d7a.css">
+<link rel="stylesheet" media="screen" href="/assets/mbcms/vendor/jquery.fancybox-thumbs-63891ea3fd7b7f15621befe5cbdf329cd554b2129f7d69a7ea8d7cedb4c98323.css">
+<link rel="stylesheet" media="print" href="/assets/gulp/print-f54dc65f5d92353561cad5b8afd7b1e7ede0f7c606679623174ac9b2f5398f22.css">
+<script src="/assets/public_manifest-d445e04a8335b24489aad32eb4e97665330bae102ee751a2dc16a0d796fabb70.js"></script><style></style>
+<script src="/assets/mbcms/vendor/jquery.fancybox3-f9c505d41c3766de55b64d8adb02a1561e2fb4d840701f4f9896dd54e087fc67.js"></script>
+<script src="/assets/mbcms/vendor/jquery.fancybox-thumbs3-8b93bd5900393c575e9459f2708458650063093c13045971ec87f8abef9e8eea.js"></script>
+<script src="/assets/mb_manifest-bc2e3a1fc859c41b76337670aa29fdb657f0a818d314295d36bdc9aeea3db9e2.js"></script>
+
+<!-- /twitter cards -->
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@NASAClimate" name="twitter:site">
+<meta content="2020 Tied for Warmest Year on Record, NASA Analysis Shows" name="twitter:title">
+<meta content="Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA." name="twitter:description">
+<meta content="https://climate.nasa.gov/system/news_items/main_images/3061_2020Temp.jpg" name="twitter:image">
+
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+<body style="" data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" class="nav_is_fixed">
+<noscript>
+<iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-NLDQZ25' style='display:none;visibility:hidden' width='0'></iframe>
+</noscript>
+<div data-react-class="BrowseHappier" data-react-props="{&quot;gt&quot;:1,&quot;lt&quot;:11}" data-react-cache-id="BrowseHappier-0"></div>
+<!-- For svg icons future use -->
+
+<div id="main_container">
+<div id="site_body">
+<div class="site_header_area fixed fixed_show">
+<header class="site_header">
+<div class="brand_area">
+<div class="brand1">
+<a class="nasa_logo" href="https://www.nasa.gov" target="_blank" title="visit nasa.gov">NASA</a>
+</div>
+<div class="brand2">
+<div class="gcc_logo">
+<a href="/" id="gcc_logo" title="Home">Global Climate Change</a>
+</div>
+<div class="sub_logo">
+Vital Signs of the Planet
+</div>
+</div>
+<img alt="" class="print_only print_logo" src="/assets/logo_nasa_trio_black@2x.png">
+</div>
+
+<a class="visuallyhidden focusable" href="#page">Skip Navigation</a>
+<div class="right_header_container">
+<a class="menu_button" href="javascript:void(0);" id="menu_button">
+<span class="menu_icon">
+menu
+</span>
+</a>
+<a class="modal_close" id="modal_close">
+<span class="modal_close_icon">
+close modal
+</span>
+</a>
+</div>
+<div class="nav_area">
+<div id="site_nav_container">
+<nav data-react-class="Meganav" data-react-props="{&quot;nav_items&quot;:[{&quot;name&quot;:&quot;Global Climate Change Home&quot;,&quot;li_class&quot;:&quot;nav_site_title&quot;,&quot;link&quot;:&quot;/&quot;},{&quot;name&quot;:&quot;Earth Now&quot;,&quot;style&quot;:&quot;icon&quot;,&quot;li_class&quot;:&quot;earth_now&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;link&quot;:&quot;/earth-now/&quot;,&quot;svg_icon_id&quot;:&quot;earth_now&quot;,&quot;id&quot;:1356,&quot;features&quot;:[{&quot;title&quot;:&quot;Global Air Temperature&quot;,&quot;body&quot;:&quot;View a current datamap of air temperatures around the globe, observed from space.&quot;,&quot;image_src&quot;:&quot;/system/basic_html_elements/11942_global_air_temp.jpg&quot;,&quot;link&quot;:&quot;/earth-now/?vs_name=air_temperature\u0026dataset_id=820\u0026group_id=46\u0026animating=f\u0026start=\u0026end=&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;categories&quot;:[]}],&quot;title&quot;:&quot;Earth Now&quot;,&quot;short_description&quot;:&quot;Explore a real-time data visualization of NASA’s Earth-orbiting satellites and the data they collect about climate change.&quot;},{&quot;name&quot;:&quot;Facts&quot;,&quot;link&quot;:&quot;/evidence&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Evidence&quot;,&quot;link&quot;:&quot;/evidence&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:203},{&quot;name&quot;:&quot;Causes&quot;,&quot;link&quot;:&quot;/causes&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1},{&quot;name&quot;:&quot;Effects&quot;,&quot;link&quot;:&quot;/effects&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1320},{&quot;name&quot;:&quot;Scientific Consensus&quot;,&quot;link&quot;:&quot;/scientific-consensus&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1309},{&quot;name&quot;:&quot;Vital Signs&quot;,&quot;link&quot;:&quot;/vital-signs/carbon-dioxide&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1264},{&quot;name&quot;:&quot;Questions (FAQ)&quot;,&quot;link&quot;:&quot;/faq&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1265}]}],&quot;id&quot;:1263,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null},{&quot;name&quot;:&quot;Articles&quot;,&quot;link&quot;:&quot;/news&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;News and Features&quot;,&quot;link&quot;:&quot;/news&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:17},{&quot;name&quot;:&quot;Blog&quot;,&quot;link&quot;:&quot;/blog&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1279}]}],&quot;id&quot;:1268,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null},{&quot;name&quot;:&quot;Solutions&quot;,&quot;link&quot;:&quot;/solutions/resources&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Mitigation and Adaptation&quot;,&quot;link&quot;:&quot;/solutions/adaptation-mitigation&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1267},{&quot;name&quot;:&quot;Government Resources&quot;,&quot;link&quot;:&quot;/solutions/resources&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1296}]}],&quot;id&quot;:1266,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:&quot;&quot;},{&quot;name&quot;:&quot;Explore&quot;,&quot;link&quot;:&quot;/climate_resource_center/interactives&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Images of Change&quot;,&quot;link&quot;:&quot;/images-of-change&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:207},{&quot;name&quot;:&quot;Earth Minute Videos&quot;,&quot;link&quot;:&quot;/climate_resource_center/earthminute&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1293},{&quot;name&quot;:&quot;Interactives&quot;,&quot;link&quot;:&quot;/climate_resource_center/interactives&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:100},{&quot;name&quot;:&quot;Mobile Apps&quot;,&quot;link&quot;:&quot;/earth-apps/&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:204},{&quot;name&quot;:&quot;Beautiful Earth Gallery&quot;,&quot;link&quot;:&quot;/beautiful-earth&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:130},{&quot;name&quot;:&quot;Earth 360&quot;,&quot;link&quot;:&quot;/climate_resource_center/earth-360&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1351}]}],&quot;id&quot;:1271,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null},{&quot;name&quot;:&quot;Resources&quot;,&quot;link&quot;:&quot;/resources/graphics-and-multimedia&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Graphics and Multimedia&quot;,&quot;link&quot;:&quot;/resources/graphics-and-multimedia&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1303},{&quot;name&quot;:&quot;For Educators&quot;,&quot;link&quot;:&quot;/resources/education&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:55},{&quot;name&quot;:&quot;For Media&quot;,&quot;link&quot;:&quot;/resources/media-resources&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1366},{&quot;name&quot;:&quot;Climate Kids&quot;,&quot;link&quot;:&quot;http://climatekids.nasa.gov&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;id&quot;:1305},{&quot;name&quot;:&quot;Global Warming vs. Climate Change&quot;,&quot;link&quot;:&quot;/resources/global-warming-vs-climate-change&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1321},{&quot;name&quot;:&quot;En español&quot;,&quot;link&quot;:&quot;/resources/en-espanol&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1367}]}],&quot;id&quot;:1302,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null},{&quot;name&quot;:&quot;NASA Science&quot;,&quot;link&quot;:&quot;https://science.nasa.gov/&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;sections&quot;:[{&quot;items&quot;:[{&quot;name&quot;:&quot;Science Mission Directorate&quot;,&quot;link&quot;:&quot;https://science.nasa.gov/&quot;,&quot;target&quot;:&quot;_blank&quot;,&quot;id&quot;:1339},{&quot;name&quot;:&quot;Earth System Science&quot;,&quot;link&quot;:&quot;/nasa_science/science&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:257},{&quot;name&quot;:&quot;Earth Science Missions&quot;,&quot;link&quot;:&quot;/nasa_science/missions&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:2},{&quot;name&quot;:&quot;History&quot;,&quot;link&quot;:&quot;/nasa_science/history&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:11},{&quot;name&quot;:&quot;People&quot;,&quot;link&quot;:&quot;/nasa_science/people&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;id&quot;:1357}]}],&quot;id&quot;:1338,&quot;meganav_style&quot;:&quot;&quot;,&quot;features&quot;:[],&quot;short_description&quot;:null}],&quot;search&quot;:true}" data-react-cache-id="Meganav-0" class="site_nav"><span style="visibility: visible;"><ul class="nav"><li class=""><div class="nav_title"><a class="main_nav_item" href="/"><span>Global Climate Change Home</span></a></div><div class="gradient_line"></div></li><li class="earth_now"><div class="nav_title" id="li_1356"><a class="main_nav_item icon" href="/earth-now/" title="Earth Now"><span class="animated_icon"></span><span>Earth Now</span></a></div><div class="global_subnav_container"><div class="meganav_container  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav"><div class="sections_container"><h2 class="section_title">Earth Now</h2><div class="section_description">Explore a real-time data visualization of NASA’s Earth-orbiting satellites and the data they collect about climate change.</div><a class="button" href="/earth-now/">GO</a></div><div class="detail_container"><div class="feature_info"><div class="single_layout"><a class="image_container" href="/earth-now/?vs_name=air_temperature&amp;dataset_id=820&amp;group_id=46&amp;animating=f&amp;start=&amp;end=" style="background-image: url(&quot;/system/basic_html_elements/11942_global_air_temp.jpg&quot;);"><div id="1356" class="bottom_description "><div class="category_title"></div><div class="content_title">Global Air Temperature</div><div class="description">View a current datamap of air temperatures around the globe, observed from space.</div></div></a></div></div></div></div></div></div><div class="gradient_line"></div></li><li class="  "><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1263"><a class="main_nav_item" href="/evidence" target="_self"><span>Facts</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="/evidence" target="_self"><span>Evidence</span></a></li><li><a class="" href="/causes" target="_self"><span>Causes</span></a></li><li><a class="" href="/effects" target="_self"><span>Effects</span></a></li><li><a class="" href="/scientific-consensus" target="_self"><span>Scientific Consensus</span></a></li><li><a class="" href="/vital-signs/carbon-dioxide" target="_self"><span>Vital Signs</span></a></li><li><a class="" href="/faq" target="_self"><span>Questions (FAQ)</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="/evidence" target="_self"><span>Evidence</span></a></li><li><a class="" href="/causes" target="_self"><span>Causes</span></a></li><li><a class="" href="/effects" target="_self"><span>Effects</span></a></li><li><a class="" href="/scientific-consensus" target="_self"><span>Scientific Consensus</span></a></li><li><a class="" href="/vital-signs/carbon-dioxide" target="_self"><span>Vital Signs</span></a></li><li><a class="" href="/faq" target="_self"><span>Questions (FAQ)</span></a></li></div></ul></div><div class="gradient_line"></div></li><li class="  "><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1268"><a class="main_nav_item" href="/news" target="_self"><span>Articles</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="/news" target="_self"><span>News and Features</span></a></li><li><a class="" href="/blog" target="_self"><span>Blog</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="/news" target="_self"><span>News and Features</span></a></li><li><a class="" href="/blog" target="_self"><span>Blog</span></a></li></div></ul></div><div class="gradient_line"></div></li><li class="  "><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1266"><a class="main_nav_item" href="/solutions/resources" target="_self"><span>Solutions</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="/solutions/adaptation-mitigation" target="_self"><span>Mitigation and Adaptation</span></a></li><li><a class="" href="/solutions/resources" target="_self"><span>Government Resources</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="/solutions/adaptation-mitigation" target="_self"><span>Mitigation and Adaptation</span></a></li><li><a class="" href="/solutions/resources" target="_self"><span>Government Resources</span></a></li></div></ul></div><div class="gradient_line"></div></li><li class="  "><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1271"><a class="main_nav_item" href="/climate_resource_center/interactives" target="_self"><span>Explore</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="/images-of-change" target="_self"><span>Images of Change</span></a></li><li><a class="" href="/climate_resource_center/earthminute" target="_self"><span>Earth Minute Videos</span></a></li><li><a class="" href="/climate_resource_center/interactives" target="_self"><span>Interactives</span></a></li><li><a class="" href="/earth-apps/" target="_self"><span>Mobile Apps</span></a></li><li><a class="" href="/beautiful-earth" target="_self"><span>Beautiful Earth Gallery</span></a></li><li><a class="" href="/climate_resource_center/earth-360" target="_self"><span>Earth 360</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="/images-of-change" target="_self"><span>Images of Change</span></a></li><li><a class="" href="/climate_resource_center/earthminute" target="_self"><span>Earth Minute Videos</span></a></li><li><a class="" href="/climate_resource_center/interactives" target="_self"><span>Interactives</span></a></li><li><a class="" href="/earth-apps/" target="_self"><span>Mobile Apps</span></a></li><li><a class="" href="/beautiful-earth" target="_self"><span>Beautiful Earth Gallery</span></a></li><li><a class="" href="/climate_resource_center/earth-360" target="_self"><span>Earth 360</span></a></li></div></ul></div><div class="gradient_line"></div></li><li class=""><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1302"><a class="main_nav_item" href="/resources/graphics-and-multimedia" target="_self"><span>Resources</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="display: none; left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="/resources/graphics-and-multimedia" target="_self"><span>Graphics and Multimedia</span></a></li><li><a class="" href="/resources/education" target="_self"><span>For Educators</span></a></li><li><a class="" href="/resources/media-resources" target="_self"><span>For Media</span></a></li><li><a class="" href="http://climatekids.nasa.gov" target="_blank"><span><span>Climate Kids</span><span class="no_wrap">&nbsp;<span class="external_link_icon"><svg display="inline-block" height="11" viewBox="0 0 11 11" width="11" xmlns="http://www.w3.org/2000/svg"><path d="m5.335 4.125 1.485 1.485 2.75-2.75 1.43 1.43v-4.29h-4.29l1.375 1.375zm5.61 1.87-1.045-1.045v4.95h-8.8v-8.8h4.95l-1.1-1.1h-3.85c-.605 0-1.1.495-1.1 1.1v8.8c0 .605.495 1.1 1.1 1.1h8.8c.605 0 1.1-.495 1.1-1.1z" fill="#388fda" transform=""></path></svg></span></span></span></a></li><li><a class="" href="/resources/global-warming-vs-climate-change" target="_self"><span>Global Warming vs. Climate Change</span></a></li><li><a class="" href="/resources/en-espanol" target="_self"><span>En español</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="/resources/graphics-and-multimedia" target="_self"><span>Graphics and Multimedia</span></a></li><li><a class="" href="/resources/education" target="_self"><span>For Educators</span></a></li><li><a class="" href="/resources/media-resources" target="_self"><span>For Media</span></a></li><li><a class="" href="http://climatekids.nasa.gov" target="_blank"><span><span>Climate Kids</span><span class="no_wrap">&nbsp;<span class="external_link_icon"><svg display="inline-block" height="11" viewBox="0 0 11 11" width="11" xmlns="http://www.w3.org/2000/svg"><path d="m5.335 4.125 1.485 1.485 2.75-2.75 1.43 1.43v-4.29h-4.29l1.375 1.375zm5.61 1.87-1.045-1.045v4.95h-8.8v-8.8h4.95l-1.1-1.1h-3.85c-.605 0-1.1.495-1.1 1.1v8.8c0 .605.495 1.1 1.1 1.1h8.8c.605 0 1.1-.495 1.1-1.1z" fill="#388fda" transform=""></path></svg></span></span></span></a></li><li><a class="" href="/resources/global-warming-vs-climate-change" target="_self"><span>Global Warming vs. Climate Change</span></a></li><li><a class="" href="/resources/en-espanol" target="_self"><span>En español</span></a></li></div></ul></div><div class="gradient_line"></div></li><li class="  "><div class="arrow_box"><span class="arrow_down"></span></div><div class="nav_title" id="li_1338"><a class="main_nav_item" href="https://science.nasa.gov/" target="_blank"><span>NASA Science</span></a></div><div class="global_subnav_container"><div class="meganav_container no_feature  " style="left: 1025.56px;"><div class="nav_item_indicator" style="display: block; left: calc(50% - 15px);"></div><div class="meganav "><div class="sections_container"><ul><li><a class="" href="https://science.nasa.gov/" target="_blank"><span><span>Science Mission Directorate</span><span class="no_wrap">&nbsp;<span class="external_link_icon"><svg display="inline-block" height="11" viewBox="0 0 11 11" width="11" xmlns="http://www.w3.org/2000/svg"><path d="m5.335 4.125 1.485 1.485 2.75-2.75 1.43 1.43v-4.29h-4.29l1.375 1.375zm5.61 1.87-1.045-1.045v4.95h-8.8v-8.8h4.95l-1.1-1.1h-3.85c-.605 0-1.1.495-1.1 1.1v8.8c0 .605.495 1.1 1.1 1.1h8.8c.605 0 1.1-.495 1.1-1.1z" fill="#388fda" transform=""></path></svg></span></span></span></a></li><li><a class="" href="/nasa_science/science" target="_self"><span>Earth System Science</span></a></li><li><a class="" href="/nasa_science/missions" target="_self"><span>Earth Science Missions</span></a></li><li><a class="" href="/nasa_science/history" target="_self"><span>History</span></a></li><li><a class="" href="/nasa_science/people" target="_self"><span>People</span></a></li></ul></div></div></div><ul class="subnav"><div><li><a class="" href="https://science.nasa.gov/" target="_blank"><span><span>Science Mission Directorate</span><span class="no_wrap">&nbsp;<span class="external_link_icon"><svg display="inline-block" height="11" viewBox="0 0 11 11" width="11" xmlns="http://www.w3.org/2000/svg"><path d="m5.335 4.125 1.485 1.485 2.75-2.75 1.43 1.43v-4.29h-4.29l1.375 1.375zm5.61 1.87-1.045-1.045v4.95h-8.8v-8.8h4.95l-1.1-1.1h-3.85c-.605 0-1.1.495-1.1 1.1v8.8c0 .605.495 1.1 1.1 1.1h8.8c.605 0 1.1-.495 1.1-1.1z" fill="#388fda" transform=""></path></svg></span></span></span></a></li><li><a class="" href="/nasa_science/science" target="_self"><span>Earth System Science</span></a></li><li><a class="" href="/nasa_science/missions" target="_self"><span>Earth Science Missions</span></a></li><li><a class="" href="/nasa_science/history" target="_self"><span>History</span></a></li><li><a class="" href="/nasa_science/people" target="_self"><span>People</span></a></li></div></ul></div><div class="gradient_line"></div></li></ul><form class="meganav_overlay_search meganav_search" action="/search.html"><label for="meganav_search_input" class="search_field_label" style="display: inline-block; text-indent: -9999px; overflow: hidden;">search</label><input id="meganav_search_input" class="search_field " name="q" type="text" placeholder="search" value=""><div class="search_submit"></div></form></span></nav>
+<div data-react-class="CherTools" data-react-props="{&quot;title&quot;:&quot;Follow Global Climate Change&quot;,&quot;follow&quot;:[[&quot;Twitter&quot;,&quot;https://twitter.com/nasaclimate&quot;,&quot;/assets/twitter_icon@2x.png&quot;],[&quot;Facebook&quot;,&quot;https://www.facebook.com/nasaclimatechange&quot;,&quot;/assets/facebook_icon@2x.png&quot;],[&quot;Instagram&quot;,&quot;https://www.instagram.com/nasaclimatechange&quot;,&quot;/assets/instagram_icon@2x.png&quot;],[&quot;RSS&quot;,&quot;https://climate.nasa.gov/news/rss.xml&quot;,&quot;/assets/rss_icon@2x.png&quot;]]}" data-react-cache-id="CherTools-0"><div class="social_icons paradise_is_here"><div class="nav_title">Follow Global Climate Change</div><div class="twitter icon" style="cursor: pointer;"><img src="/assets/twitter_icon@2x.png" alt="Follow on Twitter"></div><div class="facebook icon" style="cursor: pointer;"><img src="/assets/facebook_icon@2x.png" alt="Follow on Facebook"></div><div class="instagram icon" style="cursor: pointer;"><img src="/assets/instagram_icon@2x.png" alt="Follow on Instagram"></div><div class="rss icon" style="cursor: pointer;"><img src="/assets/rss_icon@2x.png" alt="Follow on RSS"></div></div></div>
+</div>
+<script>
+  $(window).on('load', function() {
+    var $icon = $('a.main_nav_item.icon');
+    $icon.prepend('<span class="animated_icon"></span>');
+  })
+</script>
+</div>
+</header>
+</div>
+
+<div id="page">
+<div class="page_cover" style="display: none; opacity: 1;"></div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "2020 Tied for Warmest Year on Record, NASA Analysis Shows",
+  "mainEntityOfPage": {
+    "@type":"WebPage",
+    "@id":"/news/3061/2020-tied-for-warmest-year-on-record-nasa-analysis-shows/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://climate.nasa.gov/system/news_items/main_images/3061_2020Temp.jpg"
+  },
+  "description": "Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA.",
+  "datePublished": "2021-01-14 00:00:00 -0800",
+  "dateModified": "2021-01-14 13:35:22 -0800"
+}
+</script>
+
+
+<div data-react-class="CherTools" data-react-props="{&quot;share&quot;:[[&quot;Facebook&quot;],[&quot;Twitter&quot;],[&quot;Pinterest&quot;],[&quot;Email&quot;]]}" data-react-cache-id="CherTools-0" class="chertools_floater"><div class="wasnt_it_good all"><div class="i_found_someone"><div class="facebook"></div><div class="twitter"></div><div class="pinterest"></div><div class="email"></div></div><div class="where_do_you_go open"><span class="icon arrow_down"></span></div></div></div>
+
+<div class="header_mask"></div>
+<div data-react-class="LazyArticleNav" data-react-props="{&quot;id&quot;:3061,&quot;subsite&quot;:null,&quot;model&quot;:&quot;news_items&quot;}" data-react-cache-id="LazyArticleNav-0"><div class="article_nav"><a class="article_nav_block next" href="/news/3057/land-ecosystems-are-becoming-less-efficient-at-absorbing-carbon-dioxide/" target="_self"><div class="link_box"><img alt="Next Article" src="/assets/arrow_right.jpg"></div><div class="article_details" id="next_details"><div class="img"><img alt="" src="/system/news_items/list_view_images/3057_list_image.jpg"></div><div class="title">Land Ecosystems Are Becoming Less Efficient at Absorbing Carbon Dioxide</div></div></a></div></div>
+
+
+<section class="content_page module">
+<article>
+<div class="grid_layout">
+<header id="page_header">
+<h2 class="category_title">
+<a href="/news">News</a>
+<span class="release_date">
+| January 14, 2021
+</span>
+</h2>
+<h1 class="article_title">
+2020 Tied for Warmest Year on Record, NASA Analysis Shows
+</h1>
+</header>
+<div class="clearfix" id="primary_column">
+<figure class="main_image">
+<img alt="2020 Earth’s global average surface temperature" id="main_image" src="/system/news_items/main_images/3061_2020Temp.jpg">
+<figcaption class="main_image_caption">
+<p>2020 Earth’s global average surface temperature</p>
+
+</figcaption>
+</figure>
+<div class="wysiwyg_content">
+<p>Earth’s global average surface temperature in 2020 tied with 2016 as the warmest year on record, according to an analysis by NASA.</p>
+
+<p>Continuing the planet’s long-term warming trend, the year’s globally averaged temperature was 1.84 degrees Fahrenheit (1.02 degrees Celsius) warmer than the baseline 1951-1980 mean, according to scientists at NASA’s <a href="https://www.giss.nasa.gov/">Goddard Institute for Space Studies</a> (GISS) in New York. 2020 edged out 2016 by a very small amount, within the margin of error of the analysis, making the years effectively tied for the warmest year on record.</p>
+
+<p>“The last seven years have been the warmest seven years on record, typifying the ongoing and dramatic warming trend,” said GISS Director <a href="https://www.giss.nasa.gov/staff/gschmidt/">Gavin Schmidt</a>. “Whether one year is a record or not is not really that important – the important things are long-term trends. With these trends, and as the human impact on the climate increases, we have to expect that records will continue to be broken.”</p>
+
+<p><b>A Warming, Changing World</b></p>
+
+<p><span></span></p><figure class="center embedded_video video_player_container">
+<div class="video_wrapper">
+<iframe title="NASA Finds 2020 Tied for Hottest Year on Record" width="560" height="315" src="https://www.youtube.com/embed/Ni0lppUr_BQ?rel=0&amp;enablejsapi=1&amp;html5=1&amp;origin=https://climate.nasa.gov" frameborder="0" allowfullscreen="" id="Ni0lppUr_BQ"></iframe>
+</div>
+<figcaption>
+Globally, 2020 was the hottest year on record, effectively tying 2016, the previous record. Overall, Earth’s average temperature has risen more than 2 degrees Fahrenheit since the 1880s. Temperatures are increasing due to human activities, specifically emissions of greenhouse gases, like carbon dioxide and methane. Credits: NASA’s Scientific Visualization Studio/Lori Perkins/Kathryn Mersmann
+</figcaption>
+</figure> <i>Lee esta historia en español </i><a href="https://ciencia.nasa.gov/2020-empatado-como-mas-calido"><span><i>aquí.</i></span></a><p></p>
+
+<p>Rising temperatures are <a href="https://climate.nasa.gov/effects/">causing</a> phenomena such as loss of sea ice and ice sheet mass, sea level rise, longer and more intense heat waves, and shifts in plant and animal habitats. Understanding such long-term climate trends is essential for the safety and quality of human life, allowing humans to adapt to the changing environment in ways such as planting different crops, managing our water resources and preparing for extreme weather events.</p>
+
+<p><b>Ranking the Records</b></p>
+
+<p>A <a href="https://www.noaa.gov/news/2020-was-earth-s-2nd-hottest-year-just-behind-2016">separate, independent analysis</a> by the <a href="https://www.noaa.gov/">National Oceanic and Atmospheric Administration</a> (NOAA) concluded that 2020 was the second-warmest year in their record, behind 2016. NOAA scientists use much of the same raw temperature data in their analysis, but have a different baseline period (1901-2000) and methodology. Unlike NASA, NOAA also does not infer temperatures in polar regions lacking observations, which accounts for much of the difference between NASA and NOAA records.</p>
+
+<p>Like all scientific data, these temperature findings contain a small amount of uncertainty – in this case, mainly due to changes in weather station locations and temperature measurement methods over time. The GISS temperature analysis (GISTEMP) is <a href="https://data.giss.nasa.gov/gistemp/uncertainty/">accurate to within</a> 0.1 degrees Fahrenheit with a 95 percent confidence level for the most recent period.</p>
+
+<p><b>Beyond a Global, Annual Average</b></p>
+
+<p>While the long-term trend of warming continues, a variety of events and factors contribute to any particular year’s average temperature. Two separate events changed the amount of sunlight reaching the Earth’s surface. The Australian bush fires during the first half of the year burned 46 million acres of land, releasing <a href="https://earthobservatory.nasa.gov/images/146235/australian-smoke-plume-sets-records?src=eoa-iotd">smoke</a> and other particles more than <a href="https://www.nasa.gov/feature/langley/nasa-s-sage-iii-instrument-observes-aerosol-spike-from-australian-fires">18 miles high</a> in the atmosphere, blocking sunlight and likely cooling the atmosphere slightly. In contrast, global shutdowns related to the ongoing coronavirus (COVID-19) pandemic <a href="https://www.nasa.gov/feature/goddard/2020/nasa-model-reveals-how-much-covid-related-pollution-levels-deviated-from-the-norm">reduced</a> particulate air pollution in many areas, allowing more sunlight to reach the surface and producing a small but potentially significant warming effect. These shutdowns also appear to have reduced the amount of carbon dioxide (CO2) emissions last year, but overall CO2 concentrations continued to increase, and since warming is related to cumulative emissions, the overall amount of avoided warming will be minimal.</p>
+
+<p>The largest source of year-to-year variability in global temperatures typically comes from the <a href="https://earthobservatory.nasa.gov/features/ElNino">El Nino-Southern Oscillation</a> (ENSO), a naturally occurring cycle of heat exchange between the ocean and atmosphere. While the year has ended in a <a href="https://earthobservatory.nasa.gov/images/147703/the-cooler-sister-returns">negative (cool) phase</a> of ENSO, it started in a slightly positive (warm) phase, which marginally increased the average overall temperature. The cooling influence from the negative phase is expected to have a larger influence on 2021 than 2020.</p>
+
+<p>“The previous record warm year, 2016, received a significant boost from a strong El Nino. The lack of a similar assist from El Nino this year is evidence that the background climate continues to warm due to greenhouse gases,” Schmidt said.</p>
+
+<p>The 2020 GISS values represent surface temperatures averaged over both the whole globe and the entire year. Local weather plays a role in regional temperature variations, so not every region on Earth experiences similar amounts of warming even in a record year. <a href="https://www.ncei.noaa.gov/news/national-climate-202012">According to NOAA</a>, parts of the continental United States experienced record high temperatures in 2020, while others did not.</p>
+
+<p>In the long term, parts of the globe are also warming faster than others. Earth’s warming trends are most pronounced in the Arctic, which the GISTEMP analysis shows is warming more than three times as fast as the rest of the globe over the past 30 years, according to Schmidt. The loss of Arctic sea ice – whose annual minimum area is <a href="https://climate.nasa.gov/vital-signs/arctic-sea-ice/">declining</a> by about 13 percent per decade – makes the region <a href="http://nsidc.org/soac/air-temperatures-more-information">less reflective</a>, meaning more sunlight is absorbed by the oceans and temperatures rise further still. This phenomenon, known as Arctic amplification, is driving further sea ice loss, <a href="https://climate.nasa.gov/news/2958/greenland-antarctica-melting-six-times-faster-than-in-the-1990s/">ice sheet melt</a> and <a href="https://www.nasa.gov/specials/sea-level-rise-2020/">sea level rise</a>, <a href="https://climate.nasa.gov/news/2902/nasa-studies-how-arctic-wildfires-change-the-world/">more intense Arctic fire seasons</a>, and <a href="https://climate.nasa.gov/news/2785/unexpected-future-boost-of-methane-possible-from-arctic-permafrost/">permafrost melt</a>.</p>
+
+<div class="image_module right" style="width:px;">
+<figure class="inline_figure">
+<a class="" href="https://nasa.gov/sites/default/files/thumbnails/image/temp-2020_comparison-plot.jpg" target="_blank">
+<img alt="This plot shows yearly temperature anomalies from 1880 to 2019," src="https://nasa.gov/sites/default/files/styles/side_image/public/thumbnails/image/temp-2020_comparison-plot.jpg?itok=Kzfu-C0n" style="width:px">
+</a>
+<figcaption>
+This plot shows yearly temperature anomalies from 1880 to 2019, with respect to the 1951-1980 mean, as recorded by NASA, NOAA, the Berkeley Earth research group, and the Met Office Hadley Centre (UK). Though there are minor variations from year to year, all five temperature records show peaks and valleys in sync with each other. All show rapid warming in the past few decades, and all show the past decade has been the warmest.<br>
+<a href="https://nasa.gov/sites/default/files/thumbnails/image/temp-2020_comparison-plot.jpg" target="_blank">› Full image and caption</a>
+</figcaption>
+</figure>
+</div>
+
+<p><b>Land, Sea, Air and Space</b></p>
+
+<p>NASA’s analysis incorporates surface temperature measurements from more than 26,000 weather stations and thousands of ship- and buoy-based observations of sea surface temperatures. These raw measurements are analyzed using an algorithm that considers the varied spacing of temperature stations around the globe and urban heating effects that could skew the conclusions if not taken into account. The result of these calculations is an estimate of the global average temperature difference from a baseline period of 1951 to 1980NASA measures Earth's vital signs from land, air, and space with a fleet of satellites, as well as airborne and ground-based observation campaigns. The satellite surface temperature record from the Atmospheric Infrared Sounder (<a href="https://pubs.giss.nasa.gov/abs/su00200u.html">AIRS</a>) instrument aboard NASA’s <a href="https://aura.gsfc.nasa.gov/">Aura</a> satellite confirms the GISTEMP results of the past seven years being the warmest on record. <a href="https://www.nasa.gov/feature/goddard/2021/the-climate-events-of-2020-show-how-excess-heat-is-expressed-on-earth">Satellite measurements of air temperature, sea surface temperature, and sea levels, as well as other space-based observations, also reflect a warming, changing world.</a> The agency develops new ways to observe and study Earth's interconnected natural systems with long-term data records and computer analysis tools to better see how our planet is changing. NASA shares this unique knowledge with the global community and works with institutions in the United States and around the world that contribute to understanding and protecting our home planet.</p>
+
+<div>
+<p>NASA’s full surface temperature data set – and the complete methodology used to make the temperature calculation – are available at:</p>
+
+<p><a href="https://data.giss.nasa.gov/gistemp"><b>https://data.giss.nasa.gov/gistemp</b></a></p>
+
+<p>GISS is a NASA laboratory managed by the Earth Sciences Division of the agency’s <a href="https://www.nasa.gov/goddard">Goddard Space Flight Center</a> in Greenbelt, Maryland. The laboratory is affiliated with Columbia University’s Earth Institute and School of Engineering and Applied Science in New York.</p>
+
+<p>For more information about NASA’s Earth science missions, visit:</p>
+
+<p><a href="https://www.nasa.gov/earth"><b>https://www.nasa.gov/earth</b></a></p>
+</div>
+
+</div>
+</div>
+<div id="secondary_column">
+<aside class="teasers_module">
+<h1 class="sidebar_title">
+Explore
+</h1>
+<ul class="sidebar_gallery gallery_list">
+<li class="multimedia_teaser">
+<a href="/interactives/climate-time-machine">
+<img alt="Climate Time Machine" src="/system/feature_items/images/27_climate_time_machine.jpg">
+<div class="text">
+<h2 class="category_title">
+
+</h2>
+<h1 class="media_feature_title">
+Climate Time Machine
+</h1>
+</div>
+</a>
+</li>
+</ul>
+</aside>
+
+</div>
+</div>
+</article>
+</section>
+<section class="multi_teaser related module">
+<div class="grid_layout">
+<header>
+<h1 class="module_title">
+Related Stories
+</h1>
+</header>
+<ul class="module_gallery gallery_list">
+<li class="slide">
+<a href="/news/3055/water-limitations-in-the-tropics-offset-carbon-uptake-from-arctic-greening/">
+<div class="image_and_description_container">
+<div class="rollover_description">
+<div class="rollover_description_inner">
+New research shows that as Earth’s climate changes, increased carbon absorption by Arctic plants is being offset by a corresponding plant "productivity" decline in the tropics.
+</div>
+<div class="overlay_arrow">
+<img alt="More" src="/assets/overlay-arrow.png">
+</div>
+</div>
+<img alt="Water Limitations in the Tropics Offset Carbon Uptake from Arctic Greening" src="/system/news_items/list_view_images/3055_list_image.jpg">
+</div>
+<div class="content_title">
+<div class="date">
+December 21, 2020
+</div>
+Water Limitations in the Tropics Offset Carbon Uptake from Arctic Greening
+</div>
+</a>
+</li>
+<li class="slide">
+<a href="/news/3056/nasa-finds-what-a-glaciers-slope-reveals-about-greenland-ice-sheet-thinning/">
+<div class="image_and_description_container">
+<div class="rollover_description">
+<div class="rollover_description_inner">
+As glaciers flow outward from the Greenland Ice Sheet, what lies beneath them offers clues to their role in future ice thinning and sea-level rise contribution.
+</div>
+<div class="overlay_arrow">
+<img alt="More" src="/assets/overlay-arrow.png">
+</div>
+</div>
+<img alt="NASA Finds What a Glacier's Slope Reveals About Greenland Ice Sheet Thinning" src="/system/news_items/list_view_images/3056_list_image.jpg">
+</div>
+<div class="content_title">
+<div class="date">
+December 21, 2020
+</div>
+NASA Finds What a Glacier's Slope Reveals About Greenland Ice Sheet Thinning
+</div>
+</a>
+</li>
+<li class="slide">
+<a href="/news/3057/land-ecosystems-are-becoming-less-efficient-at-absorbing-carbon-dioxide/">
+<div class="image_and_description_container">
+<div class="rollover_description">
+<div class="rollover_description_inner">
+As atmospheric carbon dioxide levels increase, 86% of land ecosystems globally are becoming less efficient at absorbing increasing levels of the greenhouse gas.
+</div>
+<div class="overlay_arrow">
+<img alt="More" src="/assets/overlay-arrow.png">
+</div>
+</div>
+<img alt="Land Ecosystems Are Becoming Less Efficient at Absorbing Carbon Dioxide" src="/system/news_items/list_view_images/3057_list_image.jpg">
+</div>
+<div class="content_title">
+<div class="date">
+December 21, 2020
+</div>
+Land Ecosystems Are Becoming Less Efficient at Absorbing Carbon Dioxide
+</div>
+</a>
+</li>
+<li class="slide">
+<a href="/news/3053/sea-level-projections-drive-san-franciscos-adaptation-planning/">
+<div class="image_and_description_container">
+<div class="rollover_description">
+<div class="rollover_description_inner">
+New NASA research is helping the City of San Francisco plan measures to adapt to sea level rise.
+</div>
+<div class="overlay_arrow">
+<img alt="More" src="/assets/overlay-arrow.png">
+</div>
+</div>
+<img alt="Sea Level Projections Drive San Francisco's Adaptation Planning" src="/system/news_items/list_view_images/3053_23585957719_d02cc26594_o-320x240.jpg">
+</div>
+<div class="content_title">
+<div class="date">
+December 14, 2020
+</div>
+Sea Level Projections Drive San Francisco's Adaptation Planning
+</div>
+</a>
+</li>
+</ul>
+<footer>
+<a class="button" href="/news">
+more  news
+</a>
+</footer>
+</div>
+</section>
+
+
+</div>
+<footer class="clearfix" id="site_footer">
+<section class="upper_footer">
+<div class="footer_newsletter">
+<h2>Get the Newsletter</h2>
+<form action="/newsletter_signup" class="submit_newsletter" method="GET">
+<input class="email_field" name="email" onblur="this.placeholder = 'enter email address'" onfocus="this.placeholder = ''" placeholder="enter email address" type="email" value="">
+<input class="email_submit" type="submit" value="">
+</form>
+</div>
+<div class="gradient_line"></div>
+<div class="share">
+<h2>Stay Connected</h2>
+<div data-react-class="CherTools" data-react-props="{&quot;follow&quot;:[[&quot;Twitter&quot;,&quot;https://twitter.com/nasaclimate&quot;,&quot;/assets/twitter_icon@2x.png&quot;],[&quot;Facebook&quot;,&quot;https://www.facebook.com/nasaclimatechange&quot;,&quot;/assets/facebook_icon@2x.png&quot;],[&quot;Instagram&quot;,&quot;https://www.instagram.com/nasaclimatechange&quot;,&quot;/assets/instagram_icon@2x.png&quot;],[&quot;RSS&quot;,&quot;https://climate.nasa.gov/news/rss.xml&quot;,&quot;/assets/rss_icon@2x.png&quot;]]}" data-react-cache-id="CherTools-0"><div class="social_icons paradise_is_here"><div class="twitter icon" style="cursor: pointer;"><img src="/assets/twitter_icon@2x.png" alt="Follow on Twitter"></div><div class="facebook icon" style="cursor: pointer;"><img src="/assets/facebook_icon@2x.png" alt="Follow on Facebook"></div><div class="instagram icon" style="cursor: pointer;"><img src="/assets/instagram_icon@2x.png" alt="Follow on Instagram"></div><div class="rss icon" style="cursor: pointer;"><img src="/assets/rss_icon@2x.png" alt="Follow on RSS"></div></div></div>
+
+</div>
+<div class="gradient_line"></div>
+</section>
+<section class="sitemap">
+<div class="grid_layout">
+<div class="sitemap_directory">
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="/evidence">Facts</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="/evidence" target="_self">Evidence</a>
+</li>
+<li>
+<a href="/causes" target="_self">Causes</a>
+</li>
+<li>
+<a href="/effects" target="_self">Effects</a>
+</li>
+<li>
+<a href="/scientific-consensus" target="_self">Scientific Consensus</a>
+</li>
+<li>
+<a href="/vital-signs/carbon-dioxide" target="_self">Vital Signs</a>
+</li>
+<li>
+<a href="/faq" target="_self">Questions (FAQ)</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="/news">Articles</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="/news" target="_self">News and Features</a>
+</li>
+<li>
+<a href="/blog" target="_self">Blog</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="/solutions/resources">Solutions</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="/solutions/adaptation-mitigation" target="_self">Mitigation and Adaptation</a>
+</li>
+<li>
+<a href="/solutions/resources" target="_self">Government Resources</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="/climate_resource_center/interactives">Explore</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="/images-of-change" target="_self">Images of Change</a>
+</li>
+<li>
+<a href="/climate_resource_center/earthminute" target="_self">Earth Minute Videos</a>
+</li>
+<li>
+<a href="/climate_resource_center/interactives" target="_self">Interactives</a>
+</li>
+<li>
+<a href="/earth-apps/" target="_self">Mobile Apps</a>
+</li>
+<li>
+<a href="/beautiful-earth" target="_self">Beautiful Earth Gallery</a>
+</li>
+<li>
+<a href="/climate_resource_center/earth-360" target="_self">Earth 360</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="/resources/graphics-and-multimedia">Resources</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="/resources/graphics-and-multimedia" target="_self">Graphics and Multimedia</a>
+</li>
+<li>
+<a href="/resources/education" target="_self">For Educators</a>
+</li>
+<li>
+<a href="/resources/media-resources" target="_self">For Media</a>
+</li>
+<li>
+<a href="http://climatekids.nasa.gov" target="_blank">Climate Kids</a>
+</li>
+<li>
+<a href="/resources/global-warming-vs-climate-change" target="_self">Global Warming vs. Climate Change</a>
+</li>
+<li>
+<a href="/resources/en-espanol" target="_self">En español</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="sitemap_block">
+<div class="footer_sitemap_item">
+<h3 class="sitemap_title">
+<a href="https://science.nasa.gov/">NASA Science</a>
+</h3>
+<ul><li>
+<div class="global_subnav_container">
+<ul class="subnav">
+<li>
+<a href="https://science.nasa.gov/" target="_blank">Science Mission Directorate</a>
+</li>
+<li>
+<a href="/nasa_science/science" target="_self">Earth System Science</a>
+</li>
+<li>
+<a href="/nasa_science/missions" target="_self">Earth Science Missions</a>
+</li>
+<li>
+<a href="/nasa_science/history" target="_self">History</a>
+</li>
+<li>
+<a href="/nasa_science/people" target="_self">People</a>
+</li>
+
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+
+</div>
+</div>
+<div class="gradient_line"></div>
+</section>
+<section class="lower_footer">
+<div class="grid_layout">
+<div class="nav_container">
+<nav>
+<ul>
+<li>
+<a href="/about-us" target="_self">About Us</a>
+</li>
+|
+<li>
+<a href="/feedback" target="_self">Feedback</a>
+</li>
+|
+<li>
+<a href="/awards" target="_self">Awards</a>
+</li>
+|
+<li>
+<a href="http://earthobservatory.nasa.gov" target="_blank">Earth Observatory</a>
+</li>
+|
+<li>
+<a href="https://sealevel.nasa.gov" target="_blank">SEA LEVEL CHANGE</a>
+</li>
+|
+<li>
+<a href="https://www.nasa.gov/about/highlights/HP_Privacy.html" target="_blank">Privacy</a>
+</li>
+|
+<li>
+<a href="http://www.data.gov/climate/" target="_blank">Climate Data Initiative</a>
+</li>
+|
+<li>
+<a href="http://toolkit.climate.gov" target="_blank">U.S. CLIMATE RESILIENCE TOOLKIT</a>
+</li>
+
+</ul>
+</nav>
+</div>
+<div class="credits">
+<div class="footer_brands_top">
+<p>
+This website is produced by the Earth Science Communications Team at
+</p>
+</div>
+<div class="footer_brands">
+<a class="jpl" href="https://www.jpl.nasa.gov" target="_blank">NASA's Jet Propulsion Laboratory</a>
+|
+<a class="caltech" href="https://www.caltech.edu" target="_blank">California Institute of Technology</a>
+</div>
+<div class="staff">
+<p>
+Site Editor: 
+<a href="/feedback">Holly Shaftel</a>
+<br>
+Managing Editor: 
+<a href="/feedback">Randal Jackson</a>
+<br>
+Science Editor: 
+<a href="/feedback">Susan Callery</a>
+<br>
+Science Editor: 
+<a href="/feedback">Daniel Bailey</a>
+<br>
+</p>
+</div>
+<div class="site_last_updated">
+<p>
+Site last updated: January 14, 2021
+</p>
+</div>
+</div>
+</div>
+</section>
+</footer>
+
+</div>
+</div>
+<script>
+  var gmu = {
+  
+    addZero: function(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    },
+  
+    checkGMU: function(){
+      var param = mb_utils.getParam('pid')
+      var cookie_exists = mb_utils.readCookie('GMU_Visitor')
+      var now = new Date();
+      var date_string = (now.getMonth()+1) + "/"
+                + now.getDate() + "/" 
+                + now.getFullYear() + " @ "  
+                + now.getHours() + ":"  
+                + gmu.addZero(now.getMinutes()) + ":" 
+                + gmu.addZero(now.getSeconds()) + " ." 
+                + now.getMilliseconds();
+      var event_label = window.location.href + " (" + date_string + ")"
+      //if(!cookie_exists && param && param.length > 0){
+      console.log('param: ' + param);
+      console.log('cookie_exists: ' + cookie_exists);
+      if(param && param.length > 0 && cookie_exists != param){
+        console.log('create GMU cookie')
+        var date = new Date();
+        date.setTime(date.getTime()+(10*60*1000));  //10 minutes
+        var expires = "; expires="+date.toGMTString();
+        document.cookie = "GMU_Visitor="+param+expires+'; path=/';
+        _sendEvent('GMU', param, event_label, now.getTime());
+      } else if (cookie_exists){
+        console.log('use existing GMU cookie')
+        _sendEvent('GMU', cookie_exists, event_label, now.getTime());
+      } else {
+        //do nothing
+      }
+    },
+  
+    analyticsReady: function(){
+      if(typeof("_sendEvent") == 'undefined'){
+        console.log("analytics not loaded. wait 300ms.")
+        window.setTimeout(gmu.analyticsReady, 300);
+      } else {
+        console.log("analytics ok.")
+        gmu.checkGMU()
+      }
+    }
+  }
+  
+  $(document).ready(function(){
+    gmu.analyticsReady();
+  })
+</script>
+
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&amp;sub­agency=CLIMATE&amp;pua=UA-4391123-19,UA-118212757-1&amp;sp=q&amp;yt=true&amp;dclink=true&amp;exts=tif,tiff,wav" type="text/javascript"></script>
+
+
+<script src="//script.crazyegg.com/pages/scripts/0013/2090.js" async="async"></script>
+
+
+</body></html>

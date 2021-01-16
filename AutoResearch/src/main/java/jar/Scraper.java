@@ -26,6 +26,44 @@ public class Scraper {
 
     public static void main(String[] args) {
         System.out.println("starting jsoup stuydd");
+//         String html = "<html><head><title>First parse</title></head>"
+//   + "<body><p>Parsed HTML into a doc.</p></body></html>";
+        
+
+
+        File CWD = new File(System.getProperty("user.dir"));
+        String filename = "sample_article.txt";
+        File file = Paths.get(CWD.getPath(), "src/main/java/jar/" + filename).toFile();
+        if (file == null) {
+            System.out.println("issue with filename");
+            return;
+        }
+        if (!file.exists()) {
+            System.out.println("File does not exist:" + file.toString());
+            return;
+
+        }
+
+        String html;
+        if (!file.isFile()) {
+            throw new IllegalArgumentException("must be a normal file: " + file.getPath());
+        }
+        try {
+            html = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+        } catch (IOException excp) {
+            throw new IllegalArgumentException(excp.getMessage());
+        }
+
+        Document doc1 = Jsoup.parse(html);
+        System.out.printf("Title: %s\n", doc1.title());
+        String s1 = doc1.attr("body");
+        System.out.printf("Paragraph: %s\n", s1);
+        for (Element e : doc1.select("p")) { //ToDo: Figure out how to parse a JSoup Element
+            String str = e.toString();
+            //System.out.println(str);
+            System.out.printf("Element: %s\n", e);
+        }
+
 //        Document doc = null;
 //        try {
 //            doc = Jsoup.connect("https://en.wikipedia.org/").get();
@@ -49,7 +87,7 @@ public class Scraper {
 
             // In case of any IO errors, we want the messages written to the console
         } catch (IOException e) {
-            e.printStackTrace();    
+            //e.printStackTrace();    
         }
 
 
@@ -70,7 +108,7 @@ public class Scraper {
 
        ArrayList<String> URLList = readURLFile("urls.txt");
        for (String url: URLList) {
-           System.out.println(url);
+           //System.out.println(url);
        }
 //        ArrayList<String> extractedData = new ArrayList<String>();
 
