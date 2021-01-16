@@ -56,13 +56,21 @@ public class Scraper {
 
         Document doc1 = Jsoup.parse(html);
         System.out.printf("Title: %s\n", doc1.title());
-        String s1 = doc1.attr("body");
+        String s1 = doc1.attr("body"); //This line does nothing I think?
         System.out.printf("Paragraph: %s\n", s1);
+        StringBuilder sb = new StringBuilder();
         for (Element e : doc1.select("p")) { //ToDo: Figure out how to parse a JSoup Element
             String str = e.toString();
+            // str.replace("<p>", " ");
+            str = str.replace("<p>", " "); //Do Regex pattern matching here to remove all tags
+            str = str.replace("</p>", " "); //Do Regex pattern matching here to remove all tags
+            str = str.replace("<b>", " "); //Do Regex pattern matching here to remove all tags
+            str = str.replace("</b>", " "); //Do Regex pattern matching here to remove all tags
+            sb.append(str);
             //System.out.println(str);
-            System.out.printf("Element: %s\n", e);
+            // System.out.printf("Element: %s\n", e);
         }
+        System.out.println(sb.toString());
 
 //        Document doc = null;
 //        try {
