@@ -22,12 +22,14 @@ public class Main {
             return;
         }
         
-        File file = Paths.get(CWD.getPath(), args[0]).toFile();
+        File file = Paths.get(CWD.getPath(),"src/main/java/jar/" +  args[0]).toFile(); //ToDo: check if the extra 'src/main...' string is needed
         if (file == null) {
             System.out.println("issue with filename");
             return;
         }
         if (!file.exists()) {
+            System.out.println();
+            System.out.println(file.getPath());
             System.out.println("File does not exist.");
             return;
 
@@ -50,7 +52,7 @@ public class Main {
         System.out.println("replaced spaces with concat (+): " + s);
         
         //TODO: Write to query.txt
-        File queryfile = new File(CWD.getPath(), "query.txt");
+        File queryfile = new File(CWD.getPath(), "src/main/java/jar/" + "query.txt"); //ToDo: check if the extra 'src/main...' string is needed
 
         String [] queries = s.split("\n");
 
