@@ -218,7 +218,7 @@ public class Scraper {
             }
             sb.append("\n");
         }
-        sb.deleteCharAt(sb.size()-1);
+        sb.deleteCharAt(sb.length()-1);
 
         File CWD = new File(System.getProperty("user.dir"));
         File writeFile = new File(CWD.getPath(), "src/main/java/jar/" + fileName);
