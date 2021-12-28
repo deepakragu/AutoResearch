@@ -22,7 +22,7 @@ public class Main {
             return;
         }
         
-        File file = Paths.get(CWD.getPath(),"src/main/java/jar/" +  args[0]).toFile(); //ToDo: check if the extra 'src/main...' string is needed
+        File file = Paths.get(CWD.getPath(), args[0]).toFile(); //ToDo: check if the extra 'src/main...' string is needed, removed rn
         if (file == null) {
             System.out.println("issue with filename");
             return;
@@ -52,7 +52,8 @@ public class Main {
         System.out.println("replaced spaces with concat (+): " + s);
         
         //TODO: Write to query.txt
-        File queryfile = new File(CWD.getPath(), "src/main/java/jar/" + "query.txt"); //ToDo: check if the extra 'src/main...' string is needed
+        File queryfile = new File(CWD.getPath(), "query.txt"); //ToDo: check if the extra 'src/main...' string is needed, removed rn
+        
 
         String [] queries = s.split("\n");
 
@@ -70,11 +71,13 @@ public class Main {
                 throw new IllegalArgumentException("must be a normal file: " + queryfile.getPath());
             }
             try {
-                Files.write(queryfile.toPath(), ((String) query).getBytes(StandardCharsets.UTF_8)); 
+                // TODO: Overwrites query file w/ latest query, figure out design i.e. do we want all queries at once, one at a time, etc. connect w/ frontend in mind
+                Files.write(queryfile.toPath(), ((String) query).getBytes(StandardCharsets.UTF_8));  
+                System.out.println("writing query " + query + " to file " + queryfile.toPath());
             } catch (IOException excp) {
                 throw new IllegalArgumentException(excp.getMessage());
             }
-            System.out.println("writing query " + query + " to file query.txt");
+            
             //TODO: Some type of javascript method call to prevent (over)writing all queries to file immediately
         }
         

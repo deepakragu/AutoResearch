@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 
-
+// import org.jsoup;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -25,51 +25,54 @@ public class Scraper {
     //Todo: probably make this a object instead of a main class (i.e. an object that can be created in Main.java)
 
     public static void main(String[] args) {
-        System.out.println("starting jsoup stuydd");
+        // System.out.println("starting jsoup stuydd");
 //         String html = "<html><head><title>First parse</title></head>"
 //   + "<body><p>Parsed HTML into a doc.</p></body></html>";
         
 
 
         File CWD = new File(System.getProperty("user.dir"));
-        String filename = "sample_article.txt";
-        File file = Paths.get(CWD.getPath(), "src/main/java/jar/" + filename).toFile();
-        if (file == null) {
-            System.out.println("issue with filename");
-            return;
-        }
-        if (!file.exists()) {
-            System.out.println("File does not exist:" + file.toString());
-            return;
+        // String filename = "sample_article.txt";
+        // File file = Paths.get(CWD.getPath(), "src/main/java/jar/" + filename).toFile();
+        // if (file == null) {
+        //     System.out.println("issue with filename");
+        //     return;
+        // }
+        // if (!file.exists()) {
+        //     System.out.println("File does not exist:" + file.toString());
+        //     return;
 
-        }
+        // }
 
-        String html;
-        if (!file.isFile()) {
-            throw new IllegalArgumentException("must be a normal file: " + file.getPath());
-        }
-        try {
-            html = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
-        } catch (IOException excp) {
-            throw new IllegalArgumentException(excp.getMessage());
-        }
+        // String html;
+        // if (!file.isFile()) {
+        //     throw new IllegalArgumentException("must be a normal file: " + file.getPath());
+        // }
+        // try {
+        //     html = new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+        // } catch (IOException excp) {
+        //     throw new IllegalArgumentException(excp.getMessage());
+        // }
 
 
 
-        Document doc1 = Jsoup.parse(html);
-        System.out.printf("Title: %s\n", doc1.title());
-        String s1 = doc1.attr("body"); //This line does nothing I think?
-        System.out.printf("Paragraph: %s\n", s1);
-        StringBuilder sb = new StringBuilder();
-        for (Element e : doc1.select("p")) { //ToDo: Figure out how to parse a JSoup Element
-            String str = e.toString();
-            // str.replace("<p>", " ");
-            str = str.replaceAll("<[^>]*>", " ");
-            sb.append(str);
-            //System.out.println(str);
-            // System.out.printf("Element: %s\n", e);
-        }
-        //System.out.println(sb.toString());
+        // Document doc1 = Jsoup.parse(html);
+        // System.out.printf("Title: %s\n", doc1.title());
+        // String s1 = doc1.attr("body"); //This line does nothing I think?
+        // System.out.printf("Paragraph: %s\n", s1);
+        // StringBuilder sb = new StringBuilder();
+        // int counter = 0;
+        // for (Element e : doc1.select("p")) { //ToDo: Figure out how to parse a JSoup Element
+        //     String str = e.toString();
+        //     // str.replace("<p>", " ");
+        //     str = str.replaceAll("<[^>]*>", ""); //Todo: This is how to clean strings, use for ParagraphNLP 
+        //     sb.append("Paragaph " + counter + ": ");
+        //     counter++;
+        //     sb.append(str + "\n");
+        //     //System.out.println(str);
+        //     // System.out.printf("Element: %s\n", e);
+        // }
+        // System.out.println(sb.toString());
 
 //        Document doc = null;
 //        try {
@@ -85,17 +88,17 @@ public class Scraper {
 
         
 
-        try {
-            // Here we create a document object and use JSoup to fetch the website
-            Document doc = Jsoup.connect("https://www.codetriage.com/?language=Java").get();
+        // try {
+        //     // Here we create a document object and use JSoup to fetch the website
+        //     Document doc = Jsoup.connect("https://www.codetriage.com/?language=Java").get();
 
-            // With the document fetched, we use JSoup's title() method to fetch the title
-            System.out.printf("Title: %s\n", doc.title());
+        //     // With the document fetched, we use JSoup's title() method to fetch the title
+        //     System.out.printf("Title: %s\n", doc.title());
 
-            // In case of any IO errors, we want the messages written to the console
-        } catch (IOException e) {
-            //e.printStackTrace();    
-        }
+        //     // In case of any IO errors, we want the messages written to the console
+        // } catch (IOException e) {
+        //     //e.printStackTrace();    
+        // }
 
 
 
@@ -114,10 +117,12 @@ public class Scraper {
 
 
        ArrayList<String> URLList = readURLFile("urls.txt");
+       ArrayList<ArrayList<String>> extractedData = new ArrayList<ArrayList<String>>();
        for (String url: URLList) {
            //System.out.println(url);
+           extractedData.add(extractInfo(url));
        }
-//        ArrayList<String> extractedData = new ArrayList<String>();
+       writeInfoToFile(extractedData, "scrapedInfo.txt");
 
 
     }
@@ -157,7 +162,7 @@ public class Scraper {
 
     }
 
-    public String extractInfo(String url) {
+    public static ArrayList<String> extractInfo(String url) {
 
         Document doc = null;
         try {
@@ -166,23 +171,88 @@ public class Scraper {
             e.printStackTrace();
         }
 
-//        Document doc1 = Jsoup.parse(html);
-        System.out.printf("Title: %s\n", doc.title());
-        String s1 = doc.attr("body"); //This line does nothing I think?
-        System.out.printf("Paragraph: %s\n", s1);
-        StringBuilder sb = new StringBuilder();
+        ArrayList<String> returnList = new ArrayList<String>();
+
         for (Element e : doc.select("p")) { //ToDo: Figure out how to parse a JSoup Element
             String str = e.toString();
             // str.replace("<p>", " ");
-            str = str.replaceAll("<[^>]*>", " ");
-            sb.append(str);
+            str = str.replaceAll("<[^>]*>", ""); //Todo: This is how to clean strings, use for ParagraphNLP 
+            // sb.append("Paragaph " + counter + ": ");
+            // counter++;
+            // sb.append(str + "\n");
             //System.out.println(str);
             // System.out.printf("Element: %s\n", e);
+            returnList.add(str);
         }
-        System.out.println(sb.toString());
 
-        return "";
+        return returnList;
+
+// //        Document doc1 = Jsoup.parse(html);
+//         System.out.printf("Title: %s\n", doc.title());
+//         String s1 = doc.attr("body"); //This line does nothing I think?
+//         System.out.printf("Paragraph: %s\n", s1);
+//         StringBuilder sb = new StringBuilder();
+//         for (Element e : doc.select("p")) { //ToDo: Figure out how to parse a JSoup Element
+//             String str = e.toString();
+//             // str.replace("<p>", " ");
+//             str = str.replaceAll("<[^>]*>", " ");
+//             sb.append(str);
+//             //System.out.println(str);
+//             // System.out.printf("Element: %s\n", e);
+//         }
+//         System.out.println(sb.toString());
+
+//         return "";
+
+
     }
+
+    public static void writeInfoToFile(ArrayList<ArrayList<String>> infoToWrite, String fileName) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (ArrayList<String> article : infoToWrite) {
+            for (String paragraph: article) {
+                sb.append(paragraph);
+                sb.append("\t");
+            }
+            sb.append("\n");
+        }
+        sb.deleteCharAt(sb.size()-1);
+
+        File CWD = new File(System.getProperty("user.dir"));
+        File writeFile = new File(CWD.getPath(), "src/main/java/jar/" + fileName);
+        // writeFile.toFile();
+        // writeFil
+
+        if (writeFile == null) {
+            System.out.println("issue with filename");
+            return;
+        }
+        if (!writeFile.exists()) {
+            try {
+                writeFile.createNewFile();
+            } catch (IOException excp) {
+                System.out.println("Issue creating new file: " + fileName);
+            }
+            // System.out.println("File does not exist.");
+            // return;
+        }
+        if (!writeFile.isFile()) {
+            throw new IllegalArgumentException("must be a normal file: " + writeFile.getPath());
+        }
+        try {
+            Files.write(writeFile.toPath(), sb.toString().getBytes(StandardCharsets.UTF_8));  
+            // System.out.println("writing query " + query + " to file " + queryfile.toPath());
+        } catch (IOException excp) {
+            throw new IllegalArgumentException(excp.getMessage());
+        }
+        
+
+
+
+
+    } 
 
 
 }
