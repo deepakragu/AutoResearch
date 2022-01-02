@@ -100,7 +100,7 @@ def compile_information(word_freq : dict, cleaned_info : list) -> list:
             sentence = article[j]
             remove_period = sentence[0:len(sentence)-1]
 
-            citation_to_use = citation_list[i]
+            citation_to_use = citation_list[min(i, len(citation_list) - 1)] # ToDo: This is so so so so so wrong
             extracted_data[i][j] = remove_period + " (" + citation_to_use + ")."
 
     nlp = spacy.load('en_core_web_sm')
