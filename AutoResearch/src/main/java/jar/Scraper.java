@@ -176,13 +176,16 @@ public class Scraper {
         for (Element e : doc.select("p")) { //ToDo: Figure out how to parse a JSoup Element
             String str = e.toString();
             // str.replace("<p>", " ");
-            str = str.replaceAll("<[^>]*>", ""); //Todo: This is how to clean strings, use for ParagraphNLP 
+            str = str.replaceAll("<[^>]*>", "").trim(); //Todo: This is how to clean strings, use for ParagraphNLP 
             // sb.append("Paragaph " + counter + ": ");
             // counter++;
             // sb.append(str + "\n");
             //System.out.println(str);
             // System.out.printf("Element: %s\n", e);
-            returnList.add(str);
+            for (String sentence : str.split("\\. ")) {
+                System.out.println(sentence);
+                returnList.add(sentence);
+            }
         }
 
         return returnList;
@@ -212,8 +215,8 @@ public class Scraper {
         StringBuilder sb = new StringBuilder();
 
         for (ArrayList<String> article : infoToWrite) {
-            for (String paragraph: article) {
-                sb.append(paragraph);
+            for (String sentence: article) {
+                sb.append(sentence);
                 sb.append("\t");
             }
             sb.append("\n");
