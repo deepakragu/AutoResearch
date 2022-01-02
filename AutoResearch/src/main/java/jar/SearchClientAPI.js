@@ -37,6 +37,7 @@ let currentLink = {};
 let linksQueue = [];
 let printList = [];
 let writeList = [];
+let removeList = [];
 
 let prevDepth = 0;
 let maxCrawlingDepth = 5;
@@ -378,8 +379,11 @@ async function crawlBFS(startURL, maxDepth = 5) {
   
 
   currentLink = getNextInQueue();
-
-  await findLinks(currentLink);
+  try {
+    await findLinks(currentLink);
+  } catch (err) {
+    await findLinks(getNextInQueue());
+  }
 
 }
 
@@ -390,7 +394,12 @@ async function crawl(linkObj) {
   // if (linkObj.depth > 0 && linkObj.url.match("google")==null) {
   //   return;
   // }
-  await findLinks(linkObj);
+  try {
+    await findLinks(linkObj);
+  } catch (err) {
+    await findLinks(getNextInQueue());
+  }
+  
 }
 
 //The goal is to get the HTML and look for the links inside the page.
@@ -407,34 +416,38 @@ async function findLinks(linkObj) {
       } else {
         console.log("an error occurred check the URL" + response.statusCode, response.body);
       }
-      return 
-    }
-    //response.body is the whole content of the page if you want to store some kind of data from the web page you should do it here
-    let data = cheerio.load(response.body);
-    let links = data('body').find('a').filter(function (i, el) {
-      return data(this).attr('href') != null;
-    }).map(function (i, x) {
-      return data(this).attr('href');
-    });
-    if (links.length > 0) {
-      links.map(function (i, x) {
-        let reqLink = checkDomain(x);
-        if (reqLink) {
-          // console.log("reqLink: " + reqLink);
-          // console.log("linkObj.url: " + linkObj.url);
-          // if (reqLink != linkObj.url) { // This if statement checks that the link we're adding isn't the same link/domain as the link passed into the function
-            newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
-            if (newLinkObj.parent.children.length < maxLinkQueueSize) { //If statement to limit size of queue
-              addToLinkQueue(newLinkObj);
-            // }
-          }
-        }
-      });
+      removeFromLinkQueue(linkObj)
+      // throw "this link does not work for an above reason, will be removed from linkqueue"
+      // return 
     } else {
-      console.log("No more links found for " + linkObj.url);
-      console.log("response:" + response);
-      console.log("data:" + data);
-      console.log("links:" + links);
+      //response.body is the whole content of the page if you want to store some kind of data from the web page you should do it here
+      let data = cheerio.load(response.body);
+      let links = data('body').find('a').filter(function (i, el) {
+        return data(this).attr('href') != null;
+      }).map(function (i, x) {
+        return data(this).attr('href');
+      });
+    
+      if (links.length > 0) {
+        links.map(function (i, x) {
+          let reqLink = checkDomain(x);
+          if (reqLink) {
+            // console.log("reqLink: " + reqLink);
+            // console.log("linkObj.url: " + linkObj.url);
+            // if (reqLink != linkObj.url) { // This if statement checks that the link we're adding isn't the same link/domain as the link passed into the function
+              newLinkObj = new LinkURLObject(reqLink, linkObj.depth + 1, linkObj);
+              if (newLinkObj.parent.children.length < maxLinkQueueSize) { //If statement to limit size of queue
+                addToLinkQueue(newLinkObj);
+              // }
+            }
+          }
+        });
+      } else {
+        console.log("No more links found for " + linkObj.url);
+        console.log("response:" + response);
+        console.log("data:" + data);
+        console.log("links:" + links);
+      }
     }
     let nextLinkObj = getNextInQueue();
     if (nextLinkObj && nextLinkObj.depth <= maxCrawlingDepth) {
@@ -455,6 +468,7 @@ async function findLinks(linkObj) {
     }
   } catch (err) {
     console.log("Something Went Wrong...", err);
+    removeFromLinkQueue(linkObj)
   }
 }
 
@@ -472,6 +486,9 @@ function printTree() {
 }
 
 function addToPrintDFS(node) {
+  if (removeList.includes(node.url)) {
+    return;
+  }
   let spaces = Array(node.depth * 3).join("-");
   printList.push(spaces + node.url);
   writeList.push(node.url);
@@ -523,6 +540,15 @@ function checkDomain(linkURL) {
   } else {
     return;
   }
+}
+
+function removeFromLinkQueue(linkobj) {
+  // if (linksQueue.isEmpty()) {
+  //   return;
+  // }
+  console.log("Removing link from queue: " + linkobj.url);
+  removeList.push(linkobj.url);
+  
 }
 
 function addToLinkQueue(linkobj) {

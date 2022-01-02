@@ -36,10 +36,10 @@ def clean_up_information(): # Include language filters so only english shows up,
 
     for i in range(len(extracted_data)):
         extracted_data[i] = extracted_data[i].split("\t")
-        article = extracted_data[i].split(". ")
+        article = extracted_data[i]#.split(". ")
         for j in range(len(article)):
             sentence = article[j]
-            extracted_data[i][j] = sentence.replace("<[^>]*>", "") # remove HTML Tags
+            extracted_data[i][j] = sentence.replace("<[^>]*>", "").replace("\[[0-9]*\]", "") # remove HTML Tags, square brackets
 
     nlp = spacy.load('en_core_web_sm')
     Language.factory("language_detector", func= lambda nlp, name : LanguageDetector())
