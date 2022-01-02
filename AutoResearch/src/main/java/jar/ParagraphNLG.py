@@ -1,5 +1,7 @@
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
+from spacy_langdetect import LanguageDetector
+from spacy.language import Language
 import os
 import sys
 from string import punctuation
@@ -30,13 +32,36 @@ def paragraph_nlp(extracted_data_filename : str, url_list_filename : str):
 
 def clean_up_information(): # Include language filters so only english shows up, non-english texts filtered
     global extracted_data
+    global url_list
 
     for i in range(len(extracted_data)):
         extracted_data[i] = extracted_data[i].split("\t")
-        article = extracted_data[i]
+        article = extracted_data[i].split(". ")
         for j in range(len(article)):
             sentence = article[j]
             extracted_data[i][j] = sentence.replace("<[^>]*>", "") # remove HTML Tags
+
+    nlp = spacy.load('en_core_web_sm')
+    Language.factory("language_detector", func= lambda nlp, name : LanguageDetector())
+    nlp.add_pipe('language_detector', last=True)
+    # nlp.add_pipe('language_detector', last=True)
+
+    doc_list = [[nlp(word) for word in article] for article in extracted_data]
+    is_eng_lang = [[word._.language["language"] == "en" for word in article] for article in doc_list]
+    print("len(is_eng_lang): ", len(is_eng_lang))
+    print("len(doc_list): ", len(doc_list))
+    # print("is_eng_lang: ", is_eng_lang)
+
+    # print(doc_list)
+    url_list = [url_list[i] for i in range(len(url_list)) if sum(is_eng_lang[i]) >= 0.7*len(is_eng_lang[i])]
+    extracted_data = [extracted_data[i] for i in range(len(extracted_data)) if sum(is_eng_lang[i]) >= 0.7*len(is_eng_lang[i])]
+
+    for i in range(len(extracted_data)):
+        for j in range(len(extracted_data[i])):
+            print(extracted_data[i][j]) 
+
+    # url_list = 
+
 
 def get_word_freq():
     global extracted_data
